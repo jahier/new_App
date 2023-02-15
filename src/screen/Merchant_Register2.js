@@ -1,13 +1,16 @@
 import React, { useState } from "react";
-import { Button, Image, Text, TouchableOpacity, View } from "react-native";
-import { FlatList } from "react-native-gesture-handler";
+import { View, Image, Text, TouchableOpacity, FlatList } from 'react-native';
 import LinearGradient from "react-native-linear-gradient";
 import { scale, ScaledSheet } from "react-native-size-matters";
 import Imagepath from "../asstes/Imagepath";
 import BogoHedertop from "../common/BogoHedertop";
 import Buttun from "../common/Buttun";
 
-const Merchant_Register = ({ navigation }) => {
+const Merchant_Register2 = ({ navigation }) => {
+    const [btnslect, setbtnslect] = useState(false)
+    const btn = () => {
+        setbtnslect(!btnslect)
+    }
     const [slect, setslect] = useState(false)
     const data = [
         {
@@ -32,12 +35,12 @@ const Merchant_Register = ({ navigation }) => {
 
     const renderItem = ({ item }) => {
         return (
-            <View style={{ paddingLeft: scale(10) }}>
+            <View style={{ paddingLeft: scale(10), marginTop: scale(10) }}>
                 <TouchableOpacity
                     onPress={() => setslect(item.id)}
                     style={{
                         backgroundColor: slect == item.id ? '#2352A4' : 'rgba(35, 82, 164, 0.2)',
-                        width: scale(125), height: scale(100), borderRadius: scale(12), margin: 10
+                        width: scale(90), height: scale(100), borderRadius: scale(12), margin: 5
                     }}>
                     <Image style={{
                         width: scale(60), height: scale(40), alignSelf: 'center',
@@ -56,24 +59,48 @@ const Merchant_Register = ({ navigation }) => {
     return (
         <LinearGradient colors={['#88C541', '#2352A4',]} style={styles.linearGradient}>
             <View>
-                <BogoHedertop
-                    iconname='chevron-left'
-                    lefpress={() => navigation.goBack()}
-                    righttext='Help' />
-            </View>
-            <View>
-                <Image style={styles.homeimg} source={Imagepath.Vectorhome} />
-            </View>
-            <Text style={styles.hedingtext}>Merchant Register</Text>
-            <View style={{ paddingHorizontal: scale(15) }}>
+                <View>
+                    <BogoHedertop
+                        iconname='chevron-left'
+                        lefpress={() => navigation.goBack()}
+                        righttext='Help' />
+                </View>
+                <View>
+                    <Image style={styles.homeimg} source={Imagepath.Vectorhome} />
+                </View>
+                <Text style={styles.hedingtext}>Merchant Register</Text>
                 <View style={styles.whiteview}>
-                    <Text style={styles.loremtext}>What type of busniess are you?</Text>
+                    <Text style={styles.loremtext}>What type of business are you?</Text>
                     <View>
                         <FlatList
-                            numColumns={2}
+                            numColumns={3}
                             data={data}
                             renderItem={renderItem}
                         />
+                    </View>
+                    <Text style={styles.loremtext2}>Do you operate in more than one location ?</Text>
+
+
+                    <View style={styles.btnview}>
+                        <TouchableOpacity id="1" onPress={() => btn(btnslect.id)}
+                            activeOpacity={0.5}
+                            style={{
+                                width: scale(130), borderWidth: scale(1), borderColor: '#1478A8',
+                                backgroundColor: btnslect == btnslect.id? '#1478A8' : '#FFFFFF', paddingVertical: scale(10),
+                                margin: scale(10), borderRadius: scale(10)
+                            }}>
+                            <Text style={{ fontSize: scale(16), color: btnslect ==btnslect.id ? '#FFFFFF' : '#1478A8', fontWeight: 'bold', textAlign: 'center', }}>yes</Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity onPress={() => btn()}
+                            activeOpacity={0.5}
+                            style={{
+                                width: scale(130), borderWidth: scale(1), borderColor: '#1478A8',
+                                backgroundColor: btnslect ? '#1478A8' : '#FFFFFF', paddingVertical: scale(10),
+                                margin: scale(10), borderRadius: scale(10)
+                            }}>
+                            <Text style={{ fontSize: scale(16), color: btnslect ? '#FFFFFF' : '#1478A8', fontWeight: 'bold', textAlign: 'center', }}>no</Text>
+                        </TouchableOpacity>
                     </View>
                     <View>
                         <Text style={styles.menlorem}>By creating an account, you agree to BOGO’s{'\n'}
@@ -82,23 +109,22 @@ const Merchant_Register = ({ navigation }) => {
                             <Text style={styles.lorem2}>Privacy Policy</Text>
                         </Text>
                     </View>
-                    <View style={{ paddingHorizontal: scale(10), marginTop: scale(30), bottom: scale(20), }}>
+                    <View style={{ paddingHorizontal: scale(10), marginTop: scale(80), bottom: scale(60), }}>
                         <Buttun style={{ backgroundColor: '#029CAB' }}
                             title='Submit'
-                            onPress={() => navigation.navigate('Merchant_Register2')} />
+                            onPress={() => navigation.navigate('Business_Info')} />
                     </View>
                 </View>
-
 
             </View>
         </LinearGradient>
     )
 }
-export default Merchant_Register;
+export default Merchant_Register2
 
 const styles = ScaledSheet.create({
     linearGradient: {
-        flex: 1
+        flex: 1, paddingHorizontal: '10@s'
     },
     homeimg: {
         resizeMode: 'contain', width: '48@s',
@@ -115,20 +141,18 @@ const styles = ScaledSheet.create({
     },
     loremtext: {
         color: '#1478A8', fontSize: '14@s',
-        textAlign: 'center', marginTop: '5@s'
+        textAlign: 'center', marginTop: '5@s',
+        fontWeight: '600'
     },
-    // slect: {
-    //     width: '125@s', height: '100@s', borderRadius: '12@s'
-    // },
-    // vectoricon: {
-    //     width: '60@s', height: '40@s', alignSelf: 'center',
-    //     tintColor: '#898A8D', marginTop: '10@s',
-    //     resizeMode: 'contain'
-    // },
-    // vectertext: {
-    //     fontSize: '12@s', fontWeight: '400', color: '#666666',
-    //     textAlign: 'center', marginTop: '15@s'
-    // },
+    loremtext2: {
+        color: '#1478A8', fontSize: '16@s',
+        textAlign: 'center', marginTop: '5@s',
+        fontWeight: '400'
+    },
+    btnview: {
+        flexDirection: 'row', justifyContent: 'space-between',
+        paddingHorizontal: '15@s', marginTop: '20@s'
+    },
     menlorem: {
         fontSize: '13@s', fontWeight: '400',
         color: '#8E8E8E', textAlign: 'center',
@@ -138,4 +162,8 @@ const styles = ScaledSheet.create({
         fontSize: '13@s', fontWeight: '400',
         color: '#1478A8'
     },
+    // btn: {
+    //     width: '150@s', borderWidth: '1@s', borderColor: '#1478A8',
+    //     backgroundColor: '#FFFFFF'
+    // },
 })

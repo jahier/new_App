@@ -5,10 +5,10 @@ import Imagepath from "../asstes/Imagepath";
 
 const Splase = ({ navigation }) => {
     useEffect(() => {
-        const timer = setTimeout(() => {
+        setTimeout(() => {
             navigation.navigate('Swiperr')
-        }, 2000);
-    }, []);
+        }, 1500)
+    }, [])
     return (
         <View style={{ justifyContent: 'center', alignItems: 'center' }}>
             <Image styl={styles.bacimg} source={Imagepath.splase_img}>
@@ -17,8 +17,6 @@ const Splase = ({ navigation }) => {
                 <Image style={styles.logo} source={Imagepath.bogologo} />
             </View>
         </View>
-
-
 
     )
 }
