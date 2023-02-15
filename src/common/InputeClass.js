@@ -16,6 +16,7 @@ const InputeClass = ({ lebel, placeholder }) => {
                 color: '#8E8E8E', fontSize: scale(13), fontWeight: '400', position: 'absolute', bottom: scale(50), left: scale(15)
             }}>{lebel}</Text>
         </View>
+        
     )
 }
 export default InputeClass
