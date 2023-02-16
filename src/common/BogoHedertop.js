@@ -10,7 +10,7 @@ const BogoHedertop = (props) => {
         <View style={styles.hederview}>
             <View style={{ flex: 1 }}>
                 <TouchableOpacity style={styles.hederbtn} onPress={props.lefpress}>
-                    <Icon name={props.iconname} size={30} color="white" />
+                    <Icon name={props.iconname} size={25} color="white" />
                 </TouchableOpacity>
             </View>
 
@@ -19,7 +19,7 @@ const BogoHedertop = (props) => {
             </View>
             <View style={{ flex: 1, alignItems: 'flex-end', paddingHorizontal: scale(10) }}>
                 <TouchableOpacity>
-                    <Text style={{ color: 'white', fontWeight: '500', fontSize: scale(18) }}>{props.righttext}</Text>
+                    <Text style={{ color: 'white', fontWeight: '400', fontSize: scale(15) }}>{props.righttext}</Text>
                 </TouchableOpacity>
             </View>
 
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     hederview: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        padding: 10
+        paddingHorizontal: 5
     },
 
     hederimgfirst: {

@@ -14,38 +14,38 @@ const Merchant_Register = ({ navigation }) => {
             vecterimg: Imagepath.forkvectore, vectertext: 'Dining', id: '1'
         },
         {
-            vecterimg: Imagepath.Vector1, vectertext: 'Dining', id: '2'
+            vecterimg: Imagepath.Vector1, vectertext: 'Fitness', id: '2'
         },
         {
-            vecterimg: Imagepath.Vector2, vectertext: 'Dining', id: '3'
+            vecterimg: Imagepath.Vector2, vectertext: 'Services', id: '3'
         },
         {
-            vecterimg: Imagepath.Vector3, vectertext: 'Dining', id: '4'
+            vecterimg: Imagepath.Vector3, vectertext: 'Entertainment', id: '4'
         },
         {
-            vecterimg: Imagepath.massage, vectertext: 'Dining', id: '5'
+            vecterimg: Imagepath.massage, vectertext: 'Spas & Salons', id: '5'
         },
         {
-            vecterimg: Imagepath.hotelvectore, vectertext: 'Dining', id: '6'
+            vecterimg: Imagepath.hotelvectore, vectertext: 'Hotels', id: '6'
         }
     ]
 
     const renderItem = ({ item }) => {
         return (
-            <View style={{ paddingLeft: scale(10) }}>
+            <View style={{ paddingLeft: scale(0) }}>
                 <TouchableOpacity
                     onPress={() => setslect(item.id)}
                     style={{
                         backgroundColor: slect == item.id ? '#2352A4' : 'rgba(35, 82, 164, 0.2)',
-                        width: scale(125), height: scale(100), borderRadius: scale(12), margin: 10
+                        width: scale(152), height: scale(120), borderRadius: scale(12), margin: 10
                     }}>
                     <Image style={{
-                        width: scale(60), height: scale(40), alignSelf: 'center',
+                        width: scale(60), height: scale(60), alignSelf: 'center',
                         tintColor: slect == item.id ? '#FFFFFF' : '#898A8D', marginTop: scale(10),
                         resizeMode: 'contain'
                     }} source={item.vecterimg} />
                     <Text style={{
-                        fontSize: scale(12), fontWeight: '400', color: slect == item.id ? '#FFFFFF' : '#666666',
+                        fontSize: scale(14), fontWeight: '400', color: slect == item.id ? '#FFFFFF' : '#666666',
                         textAlign: 'center', marginTop: scale(15)
                     }}>{item.vectertext}</Text>
                 </TouchableOpacity>
@@ -54,55 +54,59 @@ const Merchant_Register = ({ navigation }) => {
     }
 
     return (
-        <LinearGradient colors={['#88C541', '#2352A4',]} style={styles.linearGradient}>
-            <View>
-                <BogoHedertop
-                    iconname='chevron-left'
-                    lefpress={() => navigation.goBack()}
-                    righttext='Help' />
-            </View>
-            <View>
-                <Image style={styles.homeimg} source={Imagepath.Vectorhome} />
-            </View>
-            <Text style={styles.hedingtext}>Merchant Register</Text>
-            <View style={{ paddingHorizontal: scale(15) }}>
-                <View style={styles.whiteview}>
-                    <Text style={styles.loremtext}>What type of busniess are you?</Text>
-                    <View>
-                        <FlatList
-                            numColumns={2}
-                            data={data}
-                            renderItem={renderItem}
-                        />
-                    </View>
-                    <View>
-                        <Text style={styles.menlorem}>By creating an account, you agree to BOGO’s{'\n'}
-                            <Text style={styles.lorem2}>Terms and Conditions</Text>
-                            and
-                            <Text style={styles.lorem2}>Privacy Policy</Text>
-                        </Text>
-                    </View>
-                    <View style={{ paddingHorizontal: scale(10), marginTop: scale(30), bottom: scale(20), }}>
-                        <Buttun style={{ backgroundColor: '#029CAB' }}
-                            title='Submit'
-                            onPress={() => navigation.navigate('Merchant_Register2')} />
-                    </View>
+        <View style={{ flex: 1 }}>
+            <LinearGradient colors={['#88C541', '#2352A4',]} style={styles.linearGradient}>
+               <View style={{marginTop:scale(30)}}>
+               <BogoHedertop
+                        iconname='chevron-left'
+                        lefpress={() => navigation.goBack()}
+                        righttext='Help' />
+               </View>
+                   
+              
+                <View>
+                    <Image style={styles.homeimg} source={Imagepath.Vectorhome} />
                 </View>
+                <Text style={styles.hedingtext}>Merchant Register</Text>
+                <View style={{ paddingHorizontal: scale(5) }}>
+                    <View style={styles.whiteview}>
+                        <Text style={styles.loremtext}>What type of busniess are you?</Text>
+                        <View>
+                            <FlatList
+                                numColumns={2}
+                                data={data}
+                                renderItem={renderItem}
+                            />
+                        </View>
+                        <View>
+                            <Text style={styles.menlorem}>By creating an account, you agree to BOGO’s{'\n'}
+                                <Text style={styles.lorem2}>Terms and Conditions</Text>
+                                and
+                                <Text style={styles.lorem2}>Privacy Policy</Text>
+                            </Text>
+                        </View>
+                        <View style={{ paddingHorizontal: scale(10), marginTop: scale(40), bottom: scale(20), }}>
+                            <Buttun style={{ backgroundColor: '#029CAB' }}
+                                title='Submit'
+                                onPress={() => navigation.navigate('Merchant_Register2')} />
+                        </View>
+                    </View>
 
 
-            </View>
-        </LinearGradient>
+                </View>
+            </LinearGradient>
+        </View>
     )
 }
 export default Merchant_Register;
 
 const styles = ScaledSheet.create({
     linearGradient: {
-        flex: 1
+      flex:1
     },
     homeimg: {
         resizeMode: 'contain', width: '48@s',
-        height: '35@s', alignSelf: 'center'
+        height: '48@s', alignSelf: 'center'
     },
     hedingtext: {
         textAlign: 'center', fontSize: '32@s',
@@ -111,28 +115,17 @@ const styles = ScaledSheet.create({
     },
     whiteview: {
         backgroundColor: 'white', width: '100%',
-        marginTop: '25@s'
+        marginTop: '55@s', bottom: '20@s'
     },
     loremtext: {
         color: '#1478A8', fontSize: '14@s',
         textAlign: 'center', marginTop: '5@s'
     },
-    // slect: {
-    //     width: '125@s', height: '100@s', borderRadius: '12@s'
-    // },
-    // vectoricon: {
-    //     width: '60@s', height: '40@s', alignSelf: 'center',
-    //     tintColor: '#898A8D', marginTop: '10@s',
-    //     resizeMode: 'contain'
-    // },
-    // vectertext: {
-    //     fontSize: '12@s', fontWeight: '400', color: '#666666',
-    //     textAlign: 'center', marginTop: '15@s'
-    // },
+  
     menlorem: {
         fontSize: '13@s', fontWeight: '400',
         color: '#8E8E8E', textAlign: 'center',
-        marginTop: '25@s'
+        marginTop: '15@s'
     },
     lorem2: {
         fontSize: '13@s', fontWeight: '400',

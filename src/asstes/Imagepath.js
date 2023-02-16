@@ -18,6 +18,9 @@ const Imagepath = {
     cover: require('../asstes/image/Cover.png'),
     Fill2: require('../asstes/image/cover2.png'),
     Fill3: require('../asstes/image/cover3.png'),
+    star:require('../asstes/image/star.png'),
+    star2:require('../asstes/image/starnorat.png'),
+
 
 
 

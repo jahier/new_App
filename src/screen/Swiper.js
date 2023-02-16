@@ -31,113 +31,48 @@ const Swiperr = ({ navigation }) => {
     ])
 
     return (
-        <ScrollView style={styles.menview}>
-            <View style={{ flex: 1 }}>
-                <Swiper
-                    onIndexChanged={e => setswiper(e)}
-                    ref={swiperRef}
-                    dotStyle={{ bottom: scale(140) }}
-                    activeDotStyle={{ bottom: scale(140) }}
-                >
-                    {
-                        box.map((item) => (
-                            <View>
-                                <Image style={styles.topimg} source={item.img} />
-                                <View style={styles.skytextview}>
-                                    <TouchableOpacity onPress={() =>
-                                        swiper == '2' ? navigation.navigate('Merchant_Register') : swiperRef.current.scrollBy(1)}>
-                                        <Text style={styles.skiptext}>Skip</Text>
-                                    </TouchableOpacity>
-                                </View>
-                                <View>
-                                    <Text style={styles.hedingtext}>{item.text}</Text>
-                                </View>
-                                <View>
-                                    <Text style={styles.bottamtext}>{item.subText}</Text>
-                                </View>
+
+        <View style={{ flex: 1 }}>
+            <Swiper
+                onIndexChanged={e => setswiper(e)}
+                ref={swiperRef}
+                dotStyle={{ bottom: scale(160) }}
+                activeDotStyle={{ bottom: scale(160) }}
+            >
+                {
+                    box.map((item) => (
+                        <View>
+                            <Image style={styles.topimg} source={item.img} />
+                            <View style={styles.skytextview}>
+                                <TouchableOpacity onPress={() =>
+                                    swiper == '2' ? navigation.navigate('Merchant_Register') : swiperRef.current.scrollBy(1)}>
+                                    <Text style={styles.skiptext}>Skip</Text>
+                                </TouchableOpacity>
                             </View>
-                        )
-                        )
-                    }
-                </Swiper>
-
-                {/* <Swiper
-                    onIndexChanged={e => setswiper(e)}
-                    ref={swiperRef}
-                    dotStyle={{ bottom: scale(140) }}
-                    activeDotStyle={{ bottom: scale(140) }}
-                >
-                    <View>
-                        <Image style={styles.topimg} source={Imagepath.swiper1} />
-                        <View style={styles.skytextview}>
-                            <TouchableOpacity onPress={() =>
-                                swiper == '2' ? navigation.navigate('Merchant_Register') : swiperRef.current.scrollBy(1)}>
-                                <Text style={styles.skiptext}>Skip</Text>
-                            </TouchableOpacity>
+                            <View>
+                                <Text style={styles.hedingtext}>{item.text}</Text>
+                            </View>
+                            <View>
+                                <Text style={styles.bottamtext}>{item.subText}</Text>
+                            </View>
                         </View>
-                        <View>
-                            <Text style={styles.hedingtext}>Boost revenues and {'\n'}increase your traffic</Text>
-                        </View>
+                    )
+                    )
+                }
+            </Swiper>
 
-                        <View>
-                            <Text style={styles.bottamtext}>Get customers when you need or want{'\n'} them!</Text>
-                        </View>
+        </View>
 
-                    </View>
 
-                    <View>
-                        <Image style={styles.topimg} source={Imagepath.swiper2} />
-                        <View style={styles.skytextview}>
-                            <TouchableOpacity onPress={() =>
-                                swiper == '2' ? navigation.navigate('Merchant_Register') : swiperRef.current.scrollBy(1)}>
-                                <Text style={styles.skiptext}>Skip</Text>
-                            </TouchableOpacity>
-                        </View>
-
-                        <View>
-                            <Text style={styles.hedingtext}>Customize your {'\n'}campaign</Text>
-                        </View>
-
-                        <View>
-                            <Text style={styles.bottamtext}>Target different customer segments at {'\n'}different times with different offers</Text>
-                        </View>
-
-                    </View>
-
-                    <View>
-                        <Image style={styles.topimg} source={Imagepath.swiper3} />
-                        <View style={styles.skytextview}>
-                            <TouchableOpacity onPress={() =>
-                                swiper == '2' ? navigation.navigate('Merchant_Register') : swiperRef.current.scrollBy(1)}>
-                                <Text style={styles.skiptext}>Skip</Text>
-                            </TouchableOpacity>
-                        </View>
-
-                        <View>
-                            <Text style={styles.hedingtext}>Increase your reach {'\n'}with influencers</Text>
-                        </View>
-
-                        <View>
-                            <Text style={styles.bottamtext}>GGet social media influencers promoting {'\n'} your business</Text>
-                        </View>
-
-                    </View>
-                </Swiper> */}
-
-            </View>
-
-        </ScrollView>
     )
 }
 
 export default Swiperr;
 
 const styles = ScaledSheet.create({
-    menview: {
-        backgroundColor: '#FFFFFF', width: '100%', height: '812@s'
-    },
+
     topimg: {
-        width: '100%', height: '550@s'
+     resizeMode:'contain'
     },
     skytextview: {
         paddingHorizontal: '14@s'
@@ -150,10 +85,10 @@ const styles = ScaledSheet.create({
     },
     hedingtext: {
         color: '#000000', fontSize: '24@s', fontWeight: 'bold',
-        textAlign: 'center', marginTop: '20@s'
+        textAlign: 'center', marginTop: '15@s'
     },
     bottamtext: {
         color: '#000000', fontSize: '16@s', textAlign: 'center',
-        marginTop: '15@s'
+        marginTop: '13@s'
     },
 })

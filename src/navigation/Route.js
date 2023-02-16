@@ -17,7 +17,7 @@ const Stack = createNativeStackNavigator();
 function Route() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Business_Info2'>
+      <Stack.Navigator initialRouteName='Splase'>
         <Stack.Screen name="Splase" component={Splase} options={{ headerShown: false }} />
         <Stack.Screen name="Swiperr" component={Swiperr} options={{ headerShown: false }} />
         <Stack.Screen name="Merchant_Register" component={Merchant_Register} options={{ headerShown: false }} />

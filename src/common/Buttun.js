@@ -11,7 +11,7 @@ const Buttun = ({ title, onPress, style, type ,soure}) => {
                     activeOpacity={0.5}
                     style={[{
                         width: '100%', backgroundColor: 'orange', padding: scale(10),
-                        borderRadius: scale(5), alignSelf: 'center'
+                        borderRadius: scale(5), alignSelf: 'center',
                     }, style]}>
                     <Text style={{ fontSize: scale(16), color: 'white', fontWeight: 'bold', textAlign: 'center', textTransform: 'uppercase' }}>{title}</Text>
                 </TouchableOpacity>

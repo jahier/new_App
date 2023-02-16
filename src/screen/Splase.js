@@ -24,7 +24,7 @@ export default Splase;
 
 const styles = ScaledSheet.create({
     bacimg: {
-        flex: 1,
+        flex: 1, resizeMode: 'contain'
     },
     logoview: {
         position: 'absolute',

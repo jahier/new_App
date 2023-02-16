@@ -35,12 +35,12 @@ const Merchant_Register2 = ({ navigation }) => {
 
     const renderItem = ({ item }) => {
         return (
-            <View style={{ paddingLeft: scale(10), marginTop: scale(10) }}>
+            <View style={{marginTop:scale(5)}}>
                 <TouchableOpacity
                     onPress={() => setslect(item.id)}
                     style={{
                         backgroundColor: slect == item.id ? '#2352A4' : 'rgba(35, 82, 164, 0.2)',
-                        width: scale(90), height: scale(100), borderRadius: scale(12), margin: 5
+                        width: scale(104), height: scale(100), borderRadius: scale(12), margin: 5
                     }}>
                     <Image style={{
                         width: scale(60), height: scale(40), alignSelf: 'center',
@@ -59,7 +59,7 @@ const Merchant_Register2 = ({ navigation }) => {
     return (
         <LinearGradient colors={['#88C541', '#2352A4',]} style={styles.linearGradient}>
             <View>
-                <View>
+                <View style={{marginTop:scale(30)}}>
                     <BogoHedertop
                         iconname='chevron-left'
                         lefpress={() => navigation.goBack()}
@@ -89,7 +89,7 @@ const Merchant_Register2 = ({ navigation }) => {
                                 backgroundColor: btnslect == btnslect.id? '#1478A8' : '#FFFFFF', paddingVertical: scale(10),
                                 margin: scale(10), borderRadius: scale(10)
                             }}>
-                            <Text style={{ fontSize: scale(16), color: btnslect ==btnslect.id ? '#FFFFFF' : '#1478A8', fontWeight: 'bold', textAlign: 'center', }}>yes</Text>
+                            <Text style={{ fontSize: scale(16), color: btnslect ==btnslect.id ? '#FFFFFF' : '#1478A8', fontWeight: 'bold', textAlign: 'center', }}>Yes</Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity onPress={() => btn()}
@@ -99,7 +99,7 @@ const Merchant_Register2 = ({ navigation }) => {
                                 backgroundColor: btnslect ? '#1478A8' : '#FFFFFF', paddingVertical: scale(10),
                                 margin: scale(10), borderRadius: scale(10)
                             }}>
-                            <Text style={{ fontSize: scale(16), color: btnslect ? '#FFFFFF' : '#1478A8', fontWeight: 'bold', textAlign: 'center', }}>no</Text>
+                            <Text style={{ fontSize: scale(16), color: btnslect ? '#FFFFFF' : '#1478A8', fontWeight: 'bold', textAlign: 'center', }}>No</Text>
                         </TouchableOpacity>
                     </View>
                     <View>
@@ -109,7 +109,7 @@ const Merchant_Register2 = ({ navigation }) => {
                             <Text style={styles.lorem2}>Privacy Policy</Text>
                         </Text>
                     </View>
-                    <View style={{ paddingHorizontal: scale(10), marginTop: scale(80), bottom: scale(60), }}>
+                    <View style={{ paddingHorizontal: scale(10), marginTop: scale(105), bottom: scale(85), }}>
                         <Buttun style={{ backgroundColor: '#029CAB' }}
                             title='Submit'
                             onPress={() => navigation.navigate('Business_Info')} />
@@ -124,11 +124,12 @@ export default Merchant_Register2
 
 const styles = ScaledSheet.create({
     linearGradient: {
-        flex: 1, paddingHorizontal: '10@s'
+      flex:1, paddingHorizontal: '5@s',
+       
     },
     homeimg: {
         resizeMode: 'contain', width: '48@s',
-        height: '35@s', alignSelf: 'center'
+        height: '48@s', alignSelf: 'center', marginTop:'20@s'
     },
     hedingtext: {
         textAlign: 'center', fontSize: '32@s',
@@ -137,7 +138,7 @@ const styles = ScaledSheet.create({
     },
     whiteview: {
         backgroundColor: 'white', width: '100%',
-        marginTop: '25@s'
+        marginTop: '45@s',bottom:'20@s'
     },
     loremtext: {
         color: '#1478A8', fontSize: '14@s',
@@ -145,13 +146,13 @@ const styles = ScaledSheet.create({
         fontWeight: '600'
     },
     loremtext2: {
-        color: '#1478A8', fontSize: '16@s',
+        color: '#1478A8', fontSize: '15@s',
         textAlign: 'center', marginTop: '5@s',
         fontWeight: '400'
     },
     btnview: {
         flexDirection: 'row', justifyContent: 'space-between',
-        paddingHorizontal: '15@s', marginTop: '20@s'
+        paddingHorizontal: '15@s', marginTop: '15@s'
     },
     menlorem: {
         fontSize: '13@s', fontWeight: '400',

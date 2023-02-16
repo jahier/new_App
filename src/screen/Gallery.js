@@ -9,7 +9,7 @@ import Buttun from "../common/Buttun";
 const Gallery = () => {
     return (
         <ScrollView >
-            <View style={{ paddingHorizontal: scale(20), marginTop: scale(10) }}>
+            <View style={{ paddingHorizontal: scale(15), marginTop: scale(10) }}>
                 <Text style={styles.brand}>Brand logo</Text>
                 <View style={styles.flexview}>
                     <View style={{
@@ -21,6 +21,7 @@ const Gallery = () => {
                     </View>
                     <View style={{ width: '58%', height: scale(100), justifyContent: 'center', paddingHorizontal: scale(15) }}>
                         <Text style={styles.viewhedtext}>Brand Logo</Text>
+                        <Text style={{ color: '#8E8E8E', fontSize: scale(12), fontWeight: '400' }}>min. size 480px, 800kb</Text>
 
                     </View>
                 </View>
@@ -30,15 +31,15 @@ const Gallery = () => {
                 <Image style={{ width: '100%', resizeMode: 'contain' }} source={Imagepath.cover} />
             </View>
             <View style={{ paddingHorizontal: scale(20), marginTop: scale(20) }}>
-                <Image style={{}} source={Imagepath.Fill2} />
+                <Image style={{ resizeMode: 'contain' }} source={Imagepath.Fill2} />
             </View>
-            <View style={{ paddingHorizontal: scale(20), marginTop: scale(50),bottom:scale(30) }}>
+            <View style={{ paddingHorizontal: scale(20), marginTop: scale(50), bottom: scale(30) }}>
                 <Buttun style={{ backgroundColor: '#029CAB' }}
                     title='Submit Details ' />
             </View>
 
         </ScrollView>
-        
+
 
     )
 }
@@ -51,7 +52,7 @@ const styles = ScaledSheet.create({
         flexDirection: 'row', marginTop: '15@s'
     },
     fill: {
-        width: '40@s', height: '40@s'
+        width: '40@s', height: '40@s', resizeMode: 'contain'
     },
     viewhedtext: {
         color: '#000000', fontSize: '14@s', fontWeight: '400@s'

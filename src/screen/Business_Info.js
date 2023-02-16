@@ -12,7 +12,7 @@ const Business_Info = ({ navigation }) => {
 
         <LinearGradient colors={['#88C541', '#2352A4',]} style={styles.linearGradient}>
             <View>
-                <View>
+                <View style={{ marginTop: scale(30) }}>
                     <BogoHedertop
                         iconname='chevron-left'
                         lefpress={() => navigation.goBack()}
@@ -24,7 +24,7 @@ const Business_Info = ({ navigation }) => {
                 <Text style={styles.heding}>Business Info</Text>
                 <View style={{ backgroundColor: '#FFFFFF', paddingHorizontal: scale(15) }}>
                     <Text style={styles.subtext}>what is your cafe/restaurant`s name ?</Text>
-                    <View >
+                    <View style={{ marginTop: scale(15) }}>
                         <Image style={styles.map} source={Imagepath.map} />
                         <View style={{ position: 'absolute', top: scale(30), alignSelf: 'center' }}>
                             <View>
@@ -46,7 +46,7 @@ const Business_Info = ({ navigation }) => {
                             <Text style={styles.lorem2}>Privacy Policy</Text>
                         </Text>
                     </View>
-                    <View style={{ paddingHorizontal: scale(10), marginTop: scale(40), bottom: scale(20), }}>
+                    <View style={{ paddingHorizontal: scale(10), marginTop: scale(75), bottom: scale(55), }}>
                         <Buttun style={{ backgroundColor: '#029CAB' }}
                             title='Submit'
                             onPress={() => navigation.navigate('Business_Info2')} />
@@ -59,15 +59,15 @@ const Business_Info = ({ navigation }) => {
 export default Business_Info;
 const styles = ScaledSheet.create({
     linearGradient: {
-        flex: 1, paddingHorizontal: '10@s'
+        flex: 1, paddingHorizontal: '5@s'
     },
     logo: {
-        width: '100@s', height: '70@s', tintColor: 'white',
-        alignSelf: 'center', resizeMode: 'contain'
+        width: '120@s', height: '80@s', tintColor: 'white',
+        alignSelf: 'center', resizeMode: 'contain', bottom: '20@s'
     },
     heding: {
         color: '#FFFFFF', fontSize: '32@s', textAlign: 'center',
-        fontWeight: '700'
+        fontWeight: '700', bottom: '20@s'
     },
     subtext: {
         textAlign: 'center', fontSize: '16@s', fontWeight: '600',
@@ -87,8 +87,8 @@ const styles = ScaledSheet.create({
     },
     inpute: {
         width: '270@s', backgroundColor: '#FFFFFF',
-        padding: '10@s', borderRadius: '20@s', 
-        paddingHorizontal: '30@s',color:'black'
+        padding: '10@s', borderRadius: '20@s',
+        paddingHorizontal: '30@s', color: 'black'
     },
 
 })
