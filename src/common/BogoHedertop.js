@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         flex: 2,
         alignItems: 'center'
 
-        
+
     },
     hedertext: {
         fontSize: 16, color: 'black', textAlign: 'center'

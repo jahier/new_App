@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Image, Text, TouchableOpacity, View } from "react-native";
+import { Button, Image, StatusBar, Text, TouchableOpacity, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import LinearGradient from "react-native-linear-gradient";
 import { scale, ScaledSheet } from "react-native-size-matters";
@@ -37,7 +37,7 @@ const Merchant_Register = ({ navigation }) => {
                     onPress={() => setslect(item.id)}
                     style={{
                         backgroundColor: slect == item.id ? '#2352A4' : 'rgba(35, 82, 164, 0.2)',
-                        width: scale(152), height: scale(120), borderRadius: scale(12), margin: 10
+                        width: scale(152), height: scale(110), borderRadius: scale(12), margin: 10
                     }}>
                     <Image style={{
                         width: scale(60), height: scale(60), alignSelf: 'center',
@@ -56,14 +56,16 @@ const Merchant_Register = ({ navigation }) => {
     return (
         <View style={{ flex: 1 }}>
             <LinearGradient colors={['#88C541', '#2352A4',]} style={styles.linearGradient}>
-               <View style={{marginTop:scale(30)}}>
-               <BogoHedertop
+                <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
+
+                <View style={{ marginTop: scale(30) }}>
+                    <BogoHedertop
                         iconname='chevron-left'
                         lefpress={() => navigation.goBack()}
                         righttext='Help' />
-               </View>
-                   
-              
+                </View>
+
+
                 <View>
                     <Image style={styles.homeimg} source={Imagepath.Vectorhome} />
                 </View>
@@ -85,7 +87,7 @@ const Merchant_Register = ({ navigation }) => {
                                 <Text style={styles.lorem2}>Privacy Policy</Text>
                             </Text>
                         </View>
-                        <View style={{ paddingHorizontal: scale(10), marginTop: scale(40), bottom: scale(20), }}>
+                        <View style={{ paddingHorizontal: scale(10), marginTop: scale(50), bottom: scale(30), }}>
                             <Buttun style={{ backgroundColor: '#029CAB' }}
                                 title='Submit'
                                 onPress={() => navigation.navigate('Merchant_Register2')} />
@@ -102,7 +104,7 @@ export default Merchant_Register;
 
 const styles = ScaledSheet.create({
     linearGradient: {
-      flex:1
+
     },
     homeimg: {
         resizeMode: 'contain', width: '48@s',
@@ -115,13 +117,13 @@ const styles = ScaledSheet.create({
     },
     whiteview: {
         backgroundColor: 'white', width: '100%',
-        marginTop: '55@s', bottom: '20@s'
+        marginTop: '35@s',
     },
     loremtext: {
         color: '#1478A8', fontSize: '14@s',
         textAlign: 'center', marginTop: '5@s'
     },
-  
+
     menlorem: {
         fontSize: '13@s', fontWeight: '400',
         color: '#8E8E8E', textAlign: 'center',

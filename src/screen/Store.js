@@ -11,13 +11,35 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 
 
-const Store = () => {
+const Store = ({navigation}) => {
 
 
     const ratingCompleted = () => {
 
     }
 
+    // const [selectedTime, setSelectedTime] = useState('');
+
+    // const handleTimePicker = async () => {
+    //     try {
+    //         console.log('==>>>>try');
+
+    //         const time = { action, hour, minute } = await TimePickerAndroid.open({
+    //             hour: 0,
+    //             minute: 0,
+    //             is24Hour: true,
+
+
+    //         });
+    //         if (action !== TimePickerAndroid.dismissedAction) {
+    //             const time = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
+    //             setSelectedTime(time);
+    //         }
+    //     } catch (error) {
+    //         console.log(error);
+    //         console.log('===>>>');
+    //     }
+    // };
 
 
 
@@ -141,7 +163,7 @@ const Store = () => {
             <View style={{ paddingHorizontal: scale(15) }}>
 
                 <View style={{ marginTop: scale(15) }}>
-                    <View style={{ flexDirection: 'row', }}>
+                    {/* <View style={{ flexDirection: 'row', }}>
                         <SelectDropdown
                             data={time1}
                             buttonStyle={styles.timer}
@@ -159,9 +181,17 @@ const Store = () => {
                                 // console.log(selectedItem, index)
                             }}
                         />
-                    </View>
+                    </View> */}
+
+                    {/* <View>
+                        <TouchableOpacity onPress={handleTimePicker}>
+                            <Text style={{ fontSize: 30, color: 'red' }}>Select Time</Text>
+                        </TouchableOpacity>
+                        {selectedTime ? <Text>Selected Time: {time}</Text> : null}
+                    </View> */}
+
                     <View style={{ paddingHorizontal: scale(15), position: 'absolute', }}>
-                        <Text style={styles.topdext}>Hours of Operation</Text>
+                        {/* <Text style={styles.topdext}>Hours of Operation</Text> */}
                     </View>
                 </View>
                 <View>
@@ -194,9 +224,10 @@ const Store = () => {
                     <Text style={styles.topdext}>Price Range</Text>
                 </View>
 
-                <View style={{ marginTop: scale(50), bottom: scale(30),paddingHorizontal:scale(15) }}>
+                <View style={{ marginTop: scale(50), bottom: scale(30), paddingHorizontal: scale(15) }}>
                     <Buttun style={{ backgroundColor: '#029CAB', }}
-                        title='Submit Details ' />
+                        title='Submit Details '
+                        onPress={() => navigation.navigate('select1')} />
                 </View>
             </View>
 

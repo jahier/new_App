@@ -36,8 +36,8 @@ const Swiperr = ({ navigation }) => {
             <Swiper
                 onIndexChanged={e => setswiper(e)}
                 ref={swiperRef}
-                dotStyle={{ bottom: scale(160) }}
-                activeDotStyle={{ bottom: scale(160) }}
+                dotStyle={{ bottom: scale(155) }}
+                activeDotStyle={{ bottom: scale(155) }}
             >
                 {
                     box.map((item) => (
@@ -72,7 +72,7 @@ export default Swiperr;
 const styles = ScaledSheet.create({
 
     topimg: {
-     resizeMode:'contain'
+        width: '100%'
     },
     skytextview: {
         paddingHorizontal: '14@s'

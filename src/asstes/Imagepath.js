@@ -18,8 +18,20 @@ const Imagepath = {
     cover: require('../asstes/image/Cover.png'),
     Fill2: require('../asstes/image/cover2.png'),
     Fill3: require('../asstes/image/cover3.png'),
-    star:require('../asstes/image/star.png'),
-    star2:require('../asstes/image/starnorat.png'),
+    star: require('../asstes/image/star.png'),
+    star2: require('../asstes/image/starnorat.png'),
+    baner: require('../asstes/image/baner.png'),
+    voucherback: require('../asstes/image/backvoucher.png'),
+    videoall: require('../asstes/image/allvideoloder.png'),
+    campaigin: require('../asstes/image/campaigin.png'),
+    pancil: require('../asstes/image/pancil.png'),
+    ballicon: require('../asstes/image/ballicon.png'),
+
+
+
+
+
+
 
 
 

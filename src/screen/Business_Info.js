@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image, Text } from 'react-native'
+import { View, Image, Text, StatusBar } from 'react-native'
 import { TextInput } from "react-native-gesture-handler";
 import LinearGradient from "react-native-linear-gradient";
 import { scale, ScaledSheet } from "react-native-size-matters";
@@ -12,6 +12,8 @@ const Business_Info = ({ navigation }) => {
 
         <LinearGradient colors={['#88C541', '#2352A4',]} style={styles.linearGradient}>
             <View>
+                <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
+
                 <View style={{ marginTop: scale(30) }}>
                     <BogoHedertop
                         iconname='chevron-left'

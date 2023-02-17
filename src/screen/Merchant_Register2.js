@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Image, Text, TouchableOpacity, FlatList } from 'react-native';
+import { View, Image, Text, TouchableOpacity, FlatList, StatusBar } from 'react-native';
 import LinearGradient from "react-native-linear-gradient";
 import { scale, ScaledSheet } from "react-native-size-matters";
 import Imagepath from "../asstes/Imagepath";
@@ -8,8 +8,8 @@ import Buttun from "../common/Buttun";
 
 const Merchant_Register2 = ({ navigation }) => {
     const [btnslect, setbtnslect] = useState(false)
-    const btn = () => {
-        setbtnslect(!btnslect)
+    const btn = (id) => {
+        setbtnslect(id)
     }
     const [slect, setslect] = useState(false)
     const data = [
@@ -17,33 +17,33 @@ const Merchant_Register2 = ({ navigation }) => {
             vecterimg: Imagepath.forkvectore, vectertext: 'Dining', id: '1'
         },
         {
-            vecterimg: Imagepath.Vector1, vectertext: 'Dining', id: '2'
+            vecterimg: Imagepath.Vector1, vectertext: 'Fitness ', id: '2'
         },
         {
-            vecterimg: Imagepath.Vector2, vectertext: 'Dining', id: '3'
+            vecterimg: Imagepath.Vector2, vectertext: 'Services', id: '3'
         },
         {
-            vecterimg: Imagepath.Vector3, vectertext: 'Dining', id: '4'
+            vecterimg: Imagepath.Vector3, vectertext: 'Entertainment', id: '4'
         },
         {
-            vecterimg: Imagepath.massage, vectertext: 'Dining', id: '5'
+            vecterimg: Imagepath.massage, vectertext: 'Spas & Salons', id: '5'
         },
         {
-            vecterimg: Imagepath.hotelvectore, vectertext: 'Dining', id: '6'
+            vecterimg: Imagepath.hotelvectore, vectertext: 'Hotels', id: '6'
         }
     ]
 
     const renderItem = ({ item }) => {
         return (
-            <View style={{marginTop:scale(5)}}>
+            <View style={{ marginTop: scale(5) }}>
                 <TouchableOpacity
                     onPress={() => setslect(item.id)}
                     style={{
                         backgroundColor: slect == item.id ? '#2352A4' : 'rgba(35, 82, 164, 0.2)',
-                        width: scale(104), height: scale(100), borderRadius: scale(12), margin: 5
+                        width: scale(104), height: scale(110), borderRadius: scale(12), margin: 5
                     }}>
                     <Image style={{
-                        width: scale(60), height: scale(40), alignSelf: 'center',
+                        width: scale(60), height: scale(50), alignSelf: 'center',
                         tintColor: slect == item.id ? '#FFFFFF' : '#898A8D', marginTop: scale(10),
                         resizeMode: 'contain'
                     }} source={item.vecterimg} />
@@ -59,7 +59,9 @@ const Merchant_Register2 = ({ navigation }) => {
     return (
         <LinearGradient colors={['#88C541', '#2352A4',]} style={styles.linearGradient}>
             <View>
-                <View style={{marginTop:scale(30)}}>
+                <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
+
+                <View style={{ marginTop: scale(30) }}>
                     <BogoHedertop
                         iconname='chevron-left'
                         lefpress={() => navigation.goBack()}
@@ -82,25 +84,26 @@ const Merchant_Register2 = ({ navigation }) => {
 
 
                     <View style={styles.btnview}>
-                        <TouchableOpacity id="1" onPress={() => btn(btnslect.id)}
+                        <TouchableOpacity onPress={() => btn('1')}
                             activeOpacity={0.5}
                             style={{
                                 width: scale(130), borderWidth: scale(1), borderColor: '#1478A8',
-                                backgroundColor: btnslect == btnslect.id? '#1478A8' : '#FFFFFF', paddingVertical: scale(10),
+                                backgroundColor: btnslect == '1' ? '#1478A8' : '#FFFFFF', paddingVertical: scale(10),
                                 margin: scale(10), borderRadius: scale(10)
                             }}>
-                            <Text style={{ fontSize: scale(16), color: btnslect ==btnslect.id ? '#FFFFFF' : '#1478A8', fontWeight: 'bold', textAlign: 'center', }}>Yes</Text>
+                            <Text style={{ fontSize: scale(16), color: btnslect == '1' ? '#FFFFFF' : '#1478A8', fontWeight: 'bold', textAlign: 'center', }}>Yes</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => btn()}
+                        <TouchableOpacity onPress={() => btn('2')}
                             activeOpacity={0.5}
                             style={{
                                 width: scale(130), borderWidth: scale(1), borderColor: '#1478A8',
-                                backgroundColor: btnslect ? '#1478A8' : '#FFFFFF', paddingVertical: scale(10),
+                                backgroundColor: btnslect == '2' ? '#1478A8' : '#FFFFFF', paddingVertical: scale(10),
                                 margin: scale(10), borderRadius: scale(10)
                             }}>
-                            <Text style={{ fontSize: scale(16), color: btnslect ? '#FFFFFF' : '#1478A8', fontWeight: 'bold', textAlign: 'center', }}>No</Text>
+                            <Text style={{ fontSize: scale(16), color: btnslect == '2' ? '#FFFFFF' : '#1478A8', fontWeight: 'bold', textAlign: 'center', }}>No</Text>
                         </TouchableOpacity>
+
                     </View>
                     <View>
                         <Text style={styles.menlorem}>By creating an account, you agree to BOGO’s{'\n'}
@@ -124,12 +127,12 @@ export default Merchant_Register2
 
 const styles = ScaledSheet.create({
     linearGradient: {
-      flex:1, paddingHorizontal: '5@s',
-       
+        flex: 1, paddingHorizontal: '5@s',
+
     },
     homeimg: {
         resizeMode: 'contain', width: '48@s',
-        height: '48@s', alignSelf: 'center', marginTop:'20@s'
+        height: '48@s', alignSelf: 'center', marginTop: '20@s'
     },
     hedingtext: {
         textAlign: 'center', fontSize: '32@s',
@@ -138,16 +141,16 @@ const styles = ScaledSheet.create({
     },
     whiteview: {
         backgroundColor: 'white', width: '100%',
-        marginTop: '45@s',bottom:'20@s'
+        marginTop: '45@s', bottom: '20@s'
     },
     loremtext: {
         color: '#1478A8', fontSize: '14@s',
-        textAlign: 'center', marginTop: '5@s',
+        textAlign: 'center', marginTop: '15@s',
         fontWeight: '600'
     },
     loremtext2: {
         color: '#1478A8', fontSize: '15@s',
-        textAlign: 'center', marginTop: '5@s',
+        textAlign: 'center', marginTop: '15@s',
         fontWeight: '400'
     },
     btnview: {
@@ -157,7 +160,7 @@ const styles = ScaledSheet.create({
     menlorem: {
         fontSize: '13@s', fontWeight: '400',
         color: '#8E8E8E', textAlign: 'center',
-        marginTop: '25@s'
+        marginTop: '15@s'
     },
     lorem2: {
         fontSize: '13@s', fontWeight: '400',

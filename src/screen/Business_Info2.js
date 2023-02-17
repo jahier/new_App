@@ -11,6 +11,8 @@ const Business_Info2 = ({ navigation }) => {
     return (
         <View style={{ flex: 1 }}>
             <LinearGradient colors={['#88C541', '#2352A4',]} style={styles.linearGradient}>
+            <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
+
                 <View style={{ marginTop: scale(30) }}>
                     <BogoHedertop
                         iconname='chevron-left'
@@ -24,7 +26,7 @@ const Business_Info2 = ({ navigation }) => {
                             <Image style={styles.logo} source={Imagepath.bogologo} />
                         </View>
                         <Text style={styles.heding}>Business Info</Text>
-                        <View style={{ backgroundColor: '#FFFFFF', paddingHorizontal: scale(15), marginTop: scale(20),bottom:scale(20) }}>
+                        <View style={{ backgroundColor: '#FFFFFF', paddingHorizontal: scale(15), marginTop: scale(20), bottom: scale(20) }}>
                             <Text style={styles.subtext}>Fill in the information below</Text>
                             <View style={{ marginTop: scale(10) }}>
                                 <Image style={styles.map} source={Imagepath.map2} />
@@ -44,7 +46,10 @@ const Business_Info2 = ({ navigation }) => {
                     </View>
                 </View>
             </LinearGradient>
-            <Toptab />
+
+            <LinearGradient colors={['#2352A4', '#2352A4',]} style={styles.linearGradient}>
+                <Toptab />
+            </LinearGradient>
         </View>
     )
 }
@@ -63,7 +68,7 @@ const styles = ScaledSheet.create({
         fontWeight: '700', bottom: '10@s', bottom: '30@s',
     },
     map: {
-        resizeMode: 'contain',bottom:'5@s'
+        resizeMode: 'contain', bottom: '5@s'
     },
     inpute: {
         width: '270@s', backgroundColor: '#FFFFFF',
@@ -72,7 +77,7 @@ const styles = ScaledSheet.create({
     },
     subtext: {
         textAlign: 'center', fontSize: '16@s', fontWeight: '600',
-        color: '#1478A8', marginTop: '15@s',bottom:'10@s'
+        color: '#1478A8', marginTop: '15@s', bottom: '10@s'
     },
 
 })
