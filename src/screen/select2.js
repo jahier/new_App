@@ -25,6 +25,10 @@ const select2 = () => {
                 <TopTab2 />
             </LinearGradient>
         </View>
+
+
+
+
     )
 }
 export default select2;
