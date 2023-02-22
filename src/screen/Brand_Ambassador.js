@@ -4,6 +4,7 @@ import { scale, ScaledSheet } from "react-native-size-matters";
 import Imagepath from "../asstes/Imagepath";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import TopTab3 from "../common/TopTab3";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const Brand_Ambassador = () => {
     return (
@@ -11,7 +12,10 @@ const Brand_Ambassador = () => {
             <View style={styles.whiteview}>
                 <View style={{ marginTop: scale(10), marginLeft: scale(14), flexDirection: 'row' }}>
                     <Text style={styles.overrivew}>Dubai Marina </Text>
-                    <Icon name="chevron-down" size={20} color="#029CAB" />
+                    <TouchableOpacity style={{marginTop:scale(5)}}>
+                        <Icon name="chevron-down" size={15} color="#029CAB" />
+                    </TouchableOpacity>
+
                 </View>
 
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', }}>

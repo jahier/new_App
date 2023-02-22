@@ -53,7 +53,7 @@ const select1 = ({ navigation }) => {
                             <Text style={styles.overrivew}>BOGO Ambassador</Text>
                         </View>
                         <View style={{ paddingHorizontal: scale(15) }}>
-                            <View style={{ backgroundColor: '#F9F9F9', elevation: 2, marginTop: scale(38), bottom: scale(30) }}>
+                            <View style={{ backgroundColor: '#F9F9F9', elevation: 2, marginTop: scale(50), bottom: scale(40) }}>
                                 <View style={{ paddingHorizontal: scale(15), padding: scale(15) }}>
                                     <Text style={{ color: '#000000', fontSize: scale(14) }}>Launch an influencer campaign and {'\n'}grow your reach online</Text>
                                     <View style={{ flexDirection: 'row' }}>
@@ -103,7 +103,7 @@ const styles = ScaledSheet.create({
     },
     whiteview: {
         borderTopRightRadius: '20@s', borderTopLeftRadius: '15@s',
-        backgroundColor: '#FFFFFF',
+        backgroundColor: '#FFFFFF', marginTop: '15@s'
     },
     overrivew: {
         color: '#130F26', fontSize: '14@s',

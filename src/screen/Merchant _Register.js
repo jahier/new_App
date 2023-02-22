@@ -37,16 +37,16 @@ const Merchant_Register = ({ navigation }) => {
                     onPress={() => setslect(item.id)}
                     style={{
                         backgroundColor: slect == item.id ? '#2352A4' : 'rgba(35, 82, 164, 0.2)',
-                        width: scale(152), height: scale(110), borderRadius: scale(12), margin: 10
+                        width: scale(152), height: scale(115), borderRadius: scale(12), margin: 10
                     }}>
                     <Image style={{
-                        width: scale(60), height: scale(60), alignSelf: 'center',
+                        width: scale(60), height: scale(55), alignSelf: 'center',
                         tintColor: slect == item.id ? '#FFFFFF' : '#898A8D', marginTop: scale(10),
                         resizeMode: 'contain'
                     }} source={item.vecterimg} />
                     <Text style={{
                         fontSize: scale(14), fontWeight: '400', color: slect == item.id ? '#FFFFFF' : '#666666',
-                        textAlign: 'center', marginTop: scale(15)
+                        textAlign: 'center', marginTop: scale(5)
                     }}>{item.vectertext}</Text>
                 </TouchableOpacity>
             </View>
@@ -69,8 +69,8 @@ const Merchant_Register = ({ navigation }) => {
                 <View>
                     <Image style={styles.homeimg} source={Imagepath.Vectorhome} />
                 </View>
-                <Text style={styles.hedingtext}>Merchant Register</Text>
-                <View style={{ paddingHorizontal: scale(5) }}>
+                <Text style={styles.hedingtext}>Business Type</Text>
+                <View style={{ }}>
                     <View style={styles.whiteview}>
                         <Text style={styles.loremtext}>What type of busniess are you?</Text>
                         <View>
@@ -83,14 +83,14 @@ const Merchant_Register = ({ navigation }) => {
                         <View>
                             <Text style={styles.menlorem}>By creating an account, you agree to BOGO’s{'\n'}
                                 <Text style={styles.lorem2}>Terms and Conditions</Text>
-                                and
-                                <Text style={styles.lorem2}>Privacy Policy</Text>
+                               {` `} and
+                                <Text style={styles.lorem2}>{` `}Privacy Policy</Text>
                             </Text>
                         </View>
-                        <View style={{ paddingHorizontal: scale(10), marginTop: scale(50), bottom: scale(30), }}>
+                        <View style={{ paddingHorizontal: scale(10), marginTop: scale(100), bottom: scale(70), }}>
                             <Buttun style={{ backgroundColor: '#029CAB' }}
                                 title='Submit'
-                                onPress={() => navigation.navigate('Merchant_Register2')} />
+                                onPress={() => navigation.navigate('Business_Info')} />
                         </View>
                     </View>
 
@@ -113,15 +113,15 @@ const styles = ScaledSheet.create({
     hedingtext: {
         textAlign: 'center', fontSize: '32@s',
         fontWeight: '700', color: '#FFFFFF',
-        marginTop: '20@s'
+        marginTop: '15@s'
     },
     whiteview: {
         backgroundColor: 'white', width: '100%',
-        marginTop: '35@s',
+        marginTop: '30@s',
     },
     loremtext: {
         color: '#1478A8', fontSize: '14@s',
-        textAlign: 'center', marginTop: '5@s'
+        textAlign: 'center', marginTop: '15@s'
     },
 
     menlorem: {

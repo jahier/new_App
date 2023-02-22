@@ -4,6 +4,8 @@ import { ScrollView } from "react-native-gesture-handler";
 import { scale, ScaledSheet } from "react-native-size-matters";
 import Imagepath from "../asstes/Imagepath";
 import Buttun from "../common/Buttun";
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+
 
 const Integration = () => {
     const data = [
@@ -41,7 +43,7 @@ const Integration = () => {
 
         return (
             <View style={{ marginTop: scale(10), paddingLeft: scale(5) }}>
-                <Image style={{ width: scale(93), height: scale(100), resizeMode: 'contain' }} source={item.img} />
+                <Image style={{ width: wp(28.3), height: scale(100), resizeMode: 'contain' }} source={item.img} />
             </View>
         )
     }

@@ -12,6 +12,13 @@ import Business_Info2 from '../screen/Business_Info2';
 import select1 from '../screen/select1';
 import select2 from '../screen/select2';
 import Brand_Ambassador from '../screen/Brand_Ambassador';
+import Welcomebogo from '../screen/Welcomebogo';
+import Bogoregistar from '../screen/Bogoregistar';
+import Bogoveryfycod from '../screen/Bogoveryfycod';
+import Network from '../screen/Network';
+import BogoSignup from '../screen/BogoSignup';
+import Slectplan from '../screen/Slectplan';
+import Payment_detial from '../screen/Payment_detial';
 // import Gallery from '../screen/Gallery';
 // import Store from '../screen/Store';
 // import Integration from '../screen/Integration';
@@ -20,7 +27,14 @@ const Stack = createNativeStackNavigator();
 function Route() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Splase'>
+      <Stack.Navigator initialRouteName='Splase' screenOptions={{headerShown:false}}>
+        < Stack.Screen name="Welcomebogo" component={Welcomebogo} ptions={{ headerShown: false }} />
+        <Stack.Screen name="Bogoregistar" component={Bogoregistar} ptions={{ headerShown: false }} />
+        <Stack.Screen name="Bogoveryfycod" component={Bogoveryfycod} ptions={{ headerShown: false }} />
+        <Stack.Screen name="Network" component={Network} ptions={{ headerShown: false }} />
+        <Stack.Screen name="BogoSignup" component={BogoSignup} ptions={{ headerShown: false }} />
+        <Stack.Screen name="Slectplan" component={Slectplan} ptions={{ headerShown: false }} />
+        <Stack.Screen name="Payment_detial" component={Payment_detial} ptions={{ headerShown: false }} />
         <Stack.Screen name="Splase" component={Splase} options={{ headerShown: false }} />
         <Stack.Screen name="Swiperr" component={Swiperr} options={{ headerShown: false }} />
         <Stack.Screen name="Merchant_Register" component={Merchant_Register} options={{ headerShown: false }} />

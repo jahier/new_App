@@ -5,6 +5,7 @@ import { scale, ScaledSheet } from "react-native-size-matters";
 import Imagepath from "../asstes/Imagepath";
 import BogoHedertop from "../common/BogoHedertop";
 import Buttun from "../common/Buttun";
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 
 const Merchant_Register2 = ({ navigation }) => {
     const [btnslect, setbtnslect] = useState(false)
@@ -127,7 +128,7 @@ export default Merchant_Register2
 
 const styles = ScaledSheet.create({
     linearGradient: {
-        flex: 1, paddingHorizontal: '5@s',
+        flex: 1, 
 
     },
     homeimg: {

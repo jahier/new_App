@@ -1,7 +1,21 @@
 const Imagepath = {
-    splase_img: require('../asstes/image/splase_img.png'),
+    bogiwhitelogo: require('../asstes/image/Bogo-White.png'),
+    eye: require('../asstes/image/hhh-removebg-preview.png'),
+    googlelogo: require('../asstes/image/googlelogo-removebg-preview.png'),
+    hide: require('../asstes/image/hrr-removebg-preview.png'),
+    back: require('../asstes/image/bk-removebg-preview.png'),
+    fullclorlogo: require('../asstes/image/Bogo-FullColor.jpg'),
+    dimondlogo: require('../asstes/image/dimondlogo.png'),
+    visacrad: require('../asstes/image/visacard.png'),
+
+
+
+
+    splase_img: require('../asstes/image/bogo-logo-animation.gif'),
     bogologo: require('../asstes/image/Bogo-Black.png'),
     swiper1: require('../asstes/image/swiper1.png'),
+    sweet: require('../asstes/image/sweet.png'),
+
     swiper2: require('../asstes/image/swiper2.png'),
     swiper3: require('../asstes/image/swiper3.png'),
     Vectorhome: require('../asstes/image/Vector.png'),
