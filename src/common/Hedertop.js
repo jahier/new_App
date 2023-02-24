@@ -11,7 +11,7 @@ const Hedertop = (props) => {
 
             <View style={{ flex: 1 }}>
                 <TouchableOpacity style={styles.hederbtn} onPress={props.lefpress}>
-                <Icon  name={props.iconname} size={20} color="black" />
+                    <Image style={styles.image1} source={props.image} />
                 </TouchableOpacity>
             </View>
 
@@ -32,18 +32,26 @@ const styles = StyleSheet.create({
     hederview: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        padding: 10,
-        
+        alignItems: 'center',
+        paddingHorizontal: 10
+        , marginTop: scale(-7)
+
     },
-   
+    image1: {
+        height: scale(150),
+        width: scale(150),
+        resizeMode: "contain",
+        marginLeft: scale(-10)
+    },
+
     hederimgfirst: {
-        height:scale(35), width:scale(35), resizeMode: 'contain'
+        height: scale(25), width: scale(25), resizeMode: 'contain'
     },
     textView: {
         flex: 2,
         alignItems: 'center'
     },
     hedertext: {
-        fontSize: 16, color: 'black',textAlign:'center'
+        fontSize: 16, color: 'black', textAlign: 'center'
     },
 })

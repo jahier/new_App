@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Text, View, Image, TextInput, ScrollView, TouchableOpacity } from 'react-native';
+import { Text, View, Image, TextInput, ScrollView, TouchableOpacity, StatusBar } from 'react-native';
 import { scale, ScaledSheet } from 'react-native-size-matters';
 import LinearGradient from 'react-native-linear-gradient';
 import PhoneInput from "react-native-phone-number-input";
@@ -31,141 +31,139 @@ const BogoSignup = ({ navigation }) => {
   return (
 
     <LinearGradient colors={['#88C541', '#2352A4',]} style={styles.linearGradient}>
+      <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
 
-<View style={{padding:3}}>
+      <View style={{ }}>
 
-      <BogoHedertop
-        iconname='chevron-left'
-        lefpress={() => navigation.goBack()}
-        righttext='Help' />
-        </View>
-
-      <View style={styles.logovew2}>
-        <Image style={styles.bogologo} source={Imagepath.bogiwhitelogo} />
-
-
+        <BogoHedertop
+          iconname='chevron-left'
+          lefpress={() => navigation.goBack()}
+          righttext='Help' />
       </View>
-
-      <Text style={styles.registar}>Register</Text>
-
-      <Text style={styles.secondtxt}>First input your personal information</Text>
-
-      <ScrollView style={styles.whitevew}>
+      <ScrollView style={{ flex: 1 }}>
+        <View style={styles.logovew2}>
+          <Image style={styles.bogologo} source={Imagepath.bogiwhitelogo} />
 
 
-        <View style={styles.inputvew}>
-          <Text style={styles.firsname}> First name
-          </Text>
-          <TextInput style={styles.inputsye}
-            placeholder="Frist name"
-            placeholderTextColor="gray"
-          />
         </View>
 
-        <View style={styles.inputvew2}>
-          <Text style={styles.firsname}>Last name </Text>
-          <TextInput style={styles.inputsye}
-            placeholder="Last name"
-            placeholderTextColor="gray"
-          />
-        </View>
+        <Text style={styles.registar}>Register</Text>
 
-        <View style={styles.inputvew2}>
-          <Text style={styles.firsname}>E-mail address </Text>
-          <TextInput style={styles.inputsye}
-            placeholder="Email"
-            placeholderTextColor="gray"
-          />
-        </View>
+        <Text style={styles.secondtxt}>First input your personal information</Text>
 
-        <View style={styles.inputvew2}>
-          <Text style={styles.firsname}>Create password </Text>
-          <TextInput style={styles.inputsye}
-            placeholder="Password"
-            placeholderTextColor="gray"
-            secureTextEntry={hide ? false : true}
-            value={hide}
-            maxLength={12}
+        <View style={styles.whitevew}>
 
 
-
-          />
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: scale(15) }}>
-            <Text style={{ fontSize: scale(13), fontWeight: '700', color: '#CCCCCC' }}>6-12 characters</Text>
-
-            <Text style={{ textAlign: 'right', right: scale(18), color: '#19CA97', fontSize: scale(12), fontWeight: '500' }}>Strong</Text>
-
+          <View style={styles.inputvew}>
+            <Text style={styles.firsname}> First name
+            </Text>
+            <TextInput style={styles.inputsye}
+              placeholder="Frist name"
+              placeholderTextColor="gray"
+            />
           </View>
-          <TouchableOpacity style={styles.tuchebl} onPress={() => hidee()}>
-            <Image style={styles.eyeimg} source={hide ? Imagepath.eye : Imagepath.hide} />
-          </TouchableOpacity>
-        </View>
 
-        <View style={styles.inputvew2}>
-          <Text style={styles.firsname}>Repeat password</Text>
-          <TextInput style={styles.inputsye}
-            placeholder="Password"
-            placeholderTextColor="gray"
-            secureTextEntry={hide2 ? false : true}
-            value={hide2}
-
-          />
-          <View style={{ marginTop: scale(14) }}>
-            <Text style={{ textAlign: 'right', right: scale(17), color: '#19CA97', fontSize: scale(12), fontWeight: '500' }}>Matched!</Text>
-
-
+          <View style={styles.inputvew2}>
+            <Text style={styles.firsname}>Last name </Text>
+            <TextInput style={styles.inputsye}
+              placeholder="Last name"
+              placeholderTextColor="gray"
+            />
           </View>
-          <TouchableOpacity style={styles.tuchebl} onPress={() => hidea2()}>
-            <Image style={styles.eyeimg} source={hide2 ? Imagepath.eye : Imagepath.hide} />
-          </TouchableOpacity>
-        </View>
+
+          <View style={styles.inputvew2}>
+            <Text style={styles.firsname}>E-mail address </Text>
+            <TextInput style={styles.inputsye}
+              placeholder="Email"
+              placeholderTextColor="gray"
+            />
+          </View>
+
+          <View style={styles.inputvew2}>
+            <Text style={styles.firsname}>Create password </Text>
+            <TextInput style={styles.inputsye}
+              placeholder="Password"
+              placeholderTextColor="gray"
+              secureTextEntry={hide ? false : true}
+              value={hide}
+              maxLength={12}
 
 
-        <View style={styles.cuntryoikrvew}>
-          <Text style={{ color: '#8E8E8E', fontSize: scale(15), fontWeight: '400', marginLeft: scale(5) }}>Mobile number</Text>
+
+            />
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: scale(15) }}>
+              <Text style={{ fontSize: scale(13), fontWeight: '700', color: '#CCCCCC' }}>6-12 characters</Text>
+
+              <Text style={{ textAlign: 'right', right: scale(18), color: '#19CA97', fontSize: scale(12), fontWeight: '500' }}>Strong</Text>
+
+            </View>
+            <TouchableOpacity style={styles.tuchebl} onPress={() => hidee()}>
+              <Image style={styles.eyeimg} source={hide ? Imagepath.eye : Imagepath.hide} />
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.inputvew2}>
+            <Text style={styles.firsname}>Repeat password</Text>
+            <TextInput style={styles.inputsye}
+              placeholder="Password"
+              placeholderTextColor="gray"
+              secureTextEntry={hide2 ? false : true}
+              value={hide2}
+
+            />
+            <View style={{ marginTop: scale(14) }}>
+              <Text style={{ textAlign: 'right', right: scale(17), color: '#19CA97', fontSize: scale(12), fontWeight: '500' }}>Matched!</Text>
 
 
-          <PhoneInput
-            textContainerStyle={{ backgroundColor: '#F7F7F7', borderRadius: 5,height:60,color:'white'}}
-            containerStyle={{ backgroundColor: '#F7F7F7', width: '98%', elevation: 0, alignSelf: 'center', borderRadius: 5, fontSize: 5, marginTop: 10 ,height:60,}}
-            textInputStyle={{height:50,padding:10,}}
-            // ref={phoneInput}
-            defaultValue={value}
-            defaultCode="DM"
-            layout="first"
-            onChangeText={(text) => {
-              setValue(text);
+            </View>
+            <TouchableOpacity style={styles.tuchebl} onPress={() => hidea2()}>
+              <Image style={styles.eyeimg} source={hide2 ? Imagepath.eye : Imagepath.hide} />
+            </TouchableOpacity>
+          </View>
+
+
+          <View style={styles.cuntryoikrvew}>
+            <Text style={{ color: '#8E8E8E', fontSize: scale(15), fontWeight: '400', marginLeft: scale(5) }}>Mobile number</Text>
+
+
+            <PhoneInput
+              textContainerStyle={{ backgroundColor: '#F7F7F7', borderRadius: 5, height: 60, color: 'white' }}
+              containerStyle={{ backgroundColor: '#F7F7F7', width: '98%', elevation: 0, alignSelf: 'center', borderRadius: 5, fontSize: 5, marginTop: 10, height: 60, }}
+              textInputStyle={{ height: 50, padding: 10, }}
+              // ref={phoneInput}
+              defaultValue={value}
+              defaultCode="DM"
+              layout="first"
+              onChangeText={(text) => {
+                setValue(text);
+              }}
+              onChangeFormattedText={(text) => {
+                setFormattedValue(text);
+              }}
+              withDarkTheme
+              withShadow
+              autoFocus
+            />
+          </View>
+
+
+          <Buttun
+            title="Submit"
+            onPress={() => navigation.navigate('Bogoveryfycod')}
+            style={{
+              height: scale(50),
+              backgroundColor: '#029CAB',
+              alignSelf: 'center',
+              borderRadius: scale(6),
+              width: '95%',
+              justifyContent: 'center',
+              marginTop: scale(18),
+              marginBottom: scale(40)
             }}
-            onChangeFormattedText={(text) => {
-              setFormattedValue(text);
-            }}
-            withDarkTheme
-            withShadow
-            autoFocus
           />
+
         </View>
-
-        {/* <TouchableOpacity style={styles.btn}>
-          <Text style={{ fontSize: scale(16), fontWeight: '700', textAlign: 'center', color: '#FFFFFF' }}>Submit</Text>
-        </TouchableOpacity> */}
-
-        <Buttun
-          title="Submit"
-          onPress={() => navigation.navigate('Bogoveryfycod')}
-          style={{
-            height: scale(50),
-            backgroundColor: '#029CAB',
-            alignSelf: 'center',
-            borderRadius: scale(6),
-            width: '95%',
-            justifyContent: 'center',
-            marginTop: scale(18),
-            marginBottom: scale(30)
-          }}
-        />
-
       </ScrollView>
-
 
     </LinearGradient >
 
@@ -197,7 +195,7 @@ const styles = ScaledSheet.create({
     top: '-20@s'
   },
   whitevew: {
-    height: '530@s',
+    height: '670@s',
     width: '100%',
     backgroundColor: '#FFFFFF',
     elevation: '5@s',
@@ -233,7 +231,7 @@ const styles = ScaledSheet.create({
     fontSize: '15@s',
     paddingLeft: '16@s',
     fontWeight: '400',
-    color:'black'
+    color: 'black'
   },
   inputvew2: {
     marginTop: '20@s',

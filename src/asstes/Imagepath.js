@@ -12,7 +12,7 @@ const Imagepath = {
 
 
     splase_img: require('../asstes/image/bogo-logo-animation.gif'),
-    bogologo: require('../asstes/image/Bogo-Black.png'),
+    bogologo: require('../asstes/image/Bogo-White.png'),
     swiper1: require('../asstes/image/swiper1.png'),
     sweet: require('../asstes/image/sweet.png'),
 
@@ -40,6 +40,13 @@ const Imagepath = {
     campaigin: require('../asstes/image/campaigin.png'),
     pancil: require('../asstes/image/pancil.png'),
     ballicon: require('../asstes/image/ballicon.png'),
+    settingicone: require('../asstes/image/setting.png'),
+    maike: require('../asstes/image/maike.png'),
+    line1: require('../asstes/image/Vector11.png'),
+    line2: require('../asstes/image/Vector12.png'),
+    line3: require('../asstes/image/Vector13.png'),
+    down: require('../asstes/image/Stroke1.png'),
+    maskgrup: require('../asstes/image/MaskGroup1.png'),
 
 
 

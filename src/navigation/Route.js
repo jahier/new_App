@@ -19,6 +19,8 @@ import Network from '../screen/Network';
 import BogoSignup from '../screen/BogoSignup';
 import Slectplan from '../screen/Slectplan';
 import Payment_detial from '../screen/Payment_detial';
+import Account_setting from '../screen/Account_setting';
+import Redemption_history from '../screen/Redemption_history';
 // import Gallery from '../screen/Gallery';
 // import Store from '../screen/Store';
 // import Integration from '../screen/Integration';
@@ -27,7 +29,7 @@ const Stack = createNativeStackNavigator();
 function Route() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Payment_detial' screenOptions={{headerShown:false}}>
+      <Stack.Navigator initialRouteName='Splase' screenOptions={{headerShown:false}}>
 
 
         < Stack.Screen name="Welcomebogo" component={Welcomebogo} ptions={{ headerShown: false }} />
@@ -49,6 +51,8 @@ function Route() {
         <Stack.Screen name="select1" component={select1} options={{ headerShown: false }} />
         <Stack.Screen name="select2" component={select2} options={{ headerShown: false }} />
         <Stack.Screen name="Brand_Ambassador" component={Brand_Ambassador} options={{ headerShown: false }} />
+        <Stack.Screen name="Account_setting" component={Account_setting}/>
+        <Stack.Screen name="Redemption_history" component={Redemption_history}/>
 
 
 

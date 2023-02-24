@@ -134,7 +134,7 @@ const Payment_detial = ({ navigation }) => {
 
                     <View style={{ flexDirection: 'row', width: '96%', alignSelf: 'center', marginTop: scale(35), justifyContent: 'space-between' }}>
                         <TouchableOpacity>
-                            <Text style={styles.topay}>To pay now</Text>
+                            <Text style={styles.topay}>To pay </Text>
                         </TouchableOpacity>
 
 

@@ -99,9 +99,10 @@ const Network = ({ navigation }) => {
                         marginTop: 15
                     }}
                     title="Add to payment "
+                    onPress={() => navigation.navigate('Slectplan')}
                 />
 
-                <TouchableOpacity style={{ marginTop: scale(15) }} onPress={() => navigation.navigate('Slectplan')}>
+                <TouchableOpacity style={{ marginTop: scale(15) }} >
                     <Text style={{ fontSize: scale(16), color: '#FFFFFF', fontWeight: '700', textAlign: 'center' }}>Skip for now</Text>
                 </TouchableOpacity>
             </LinearGradient>

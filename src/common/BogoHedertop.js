@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingHorizontal: 5,
-        marginTop:40
+        marginTop: 30
     },
 
     hederimgfirst: {

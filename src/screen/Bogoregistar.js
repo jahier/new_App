@@ -24,14 +24,14 @@ const Bogoregistar = ({ navigation }) => {
             <StatusBar barStyle={'light-content'} translucent backgroundColor="transparent" />
 
             <LinearGradient colors={['#88C541', '#2352A4',]} style={styles.linearGradient}>
-                <Hedertop
+                {/* <Hedertop
                     image={Imagepath.back}
                     tintclr="white"
                     tchbltxt="Help"
                     leftpress={() => navigation.goBack()}
 
                     style={{ marginTop: 30, }}
-                />
+                /> */}
 
 
 

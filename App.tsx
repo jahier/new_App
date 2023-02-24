@@ -6,7 +6,7 @@ const App = () => {
   return (
     <View style={{ backgroundColor: 'white', flex: 1 }}>
       <Route />
-      {/* <StatusBar translucent backgroundColor="transparent" barStyle="light-content" /> */}
+      <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
     </View>
   )
 }
