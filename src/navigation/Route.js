@@ -9,8 +9,8 @@ import Merchant_Register from '../screen/Merchant _Register';
 import Merchant_Register2 from '../screen/Merchant_Register2';
 import Business_Info from '../screen/Business_Info';
 import Business_Info2 from '../screen/Business_Info2';
-import select1 from '../screen/select1';
-import select2 from '../screen/select2';
+import select1 from '../screen/Select1';
+import select2 from '../screen/Select2';
 import Brand_Ambassador from '../screen/Brand_Ambassador';
 import Welcomebogo from '../screen/Welcomebogo';
 import Bogoregistar from '../screen/Bogoregistar';
@@ -21,6 +21,8 @@ import Slectplan from '../screen/Slectplan';
 import Payment_detial from '../screen/Payment_detial';
 import Account_setting from '../screen/Account_setting';
 import Redemption_history from '../screen/Redemption_history';
+import Select1 from '../screen/Select1';
+import Select2 from '../screen/Select2';
 // import Gallery from '../screen/Gallery';
 // import Store from '../screen/Store';
 // import Integration from '../screen/Integration';
@@ -29,7 +31,7 @@ const Stack = createNativeStackNavigator();
 function Route() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Splase' screenOptions={{headerShown:false}}>
+      <Stack.Navigator initialRouteName='Merchant_Register' screenOptions={{headerShown:false}}>
 
 
         < Stack.Screen name="Welcomebogo" component={Welcomebogo} ptions={{ headerShown: false }} />
@@ -48,8 +50,8 @@ function Route() {
         {/* <Stack.Screen name="Gallery" component={Gallery} options={{ headerShown: false }} />
         <Stack.Screen name="Store" component={Store} options={{ headerShown: false }} />
         <Stack.Screen name="Integration" component={Integration} options={{ headerShown: false }} /> */}
-        <Stack.Screen name="select1" component={select1} options={{ headerShown: false }} />
-        <Stack.Screen name="select2" component={select2} options={{ headerShown: false }} />
+        <Stack.Screen name="Select1" component={Select1} options={{ headerShown: false }} />
+        <Stack.Screen name="Select2" component={Select2} options={{ headerShown: false }} />
         <Stack.Screen name="Brand_Ambassador" component={Brand_Ambassador} options={{ headerShown: false }} />
         <Stack.Screen name="Account_setting" component={Account_setting}/>
         <Stack.Screen name="Redemption_history" component={Redemption_history}/>

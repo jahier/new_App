@@ -6,7 +6,7 @@ import Store from '../screen/Store';
 
 const Tab = createMaterialTopTabNavigator();
 
-const Toptab = () => {
+const Toptab = ({navigation}) => {
     return (
         <Tab.Navigator screenOptions={{
             tabBarLabelStyle: { fontSize: 12 },

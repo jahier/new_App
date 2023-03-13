@@ -54,11 +54,11 @@ const Merchant_Register = ({ navigation }) => {
     }
 
     return (
-        <View style={{ flex: 1 }}>
+        <ScrollView style={{ flex: 1 }}>
             <LinearGradient colors={['#88C541', '#2352A4',]} style={styles.linearGradient}>
                 <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
 
-                <View style={{ }}>
+                <View style={{}}>
                     <BogoHedertop
                         iconname='chevron-left'
                         lefpress={() => navigation.goBack()}
@@ -97,7 +97,7 @@ const Merchant_Register = ({ navigation }) => {
 
 
             </LinearGradient>
-        </View>
+        </ScrollView>
     )
 }
 export default Merchant_Register;

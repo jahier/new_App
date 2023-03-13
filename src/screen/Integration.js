@@ -1,13 +1,12 @@
 import React from "react";
 import { Image, Text, View, FlatList, TouchableOpacity } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
 import { scale, ScaledSheet } from "react-native-size-matters";
 import Imagepath from "../asstes/Imagepath";
 import Buttun from "../common/Buttun";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { ScrollView } from 'react-native-virtualized-view'
 
-
-const Integration = () => {
+const Integration = ({navigation}) => {
     const data = [
         {
             img: Imagepath.Fill3,
@@ -77,7 +76,9 @@ const Integration = () => {
             </View>
             <View style={{ marginTop: scale(50), bottom: scale(30) }}>
                 <Buttun style={{ backgroundColor: '#029CAB', }}
-                    title='Submit Details ' />
+                    title='Submit Details '
+                    onPress={()=>navigation.navigate('Account_setting')}
+                    />
             </View>
         </ScrollView>
     )

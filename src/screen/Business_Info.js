@@ -13,72 +13,71 @@ import MapView, { Marker } from 'react-native-maps';
 const Business_Info = ({ navigation }) => {
     return (
         <LinearGradient colors={['#88C541', '#2352A4',]} style={styles.linearGradient}>
-            <ScrollView>
-                <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
 
-                <View style={{}}>
-                    <BogoHedertop
-                        iconname='chevron-left'
-                        lefpress={() => navigation.goBack()}
-                        righttext='Help' />
-                </View>
-                <View>
-                    <Image style={styles.logo} source={Imagepath.bogologo} />
-                </View>
-                <Text style={styles.heding}>Business Info</Text>
-                <View style={{ backgroundColor: '#FFFFFF', paddingHorizontal: scale(15) }}>
-                    <Text style={styles.subtext}>Type your business name.</Text>
-                    <View style={{ marginTop: scale(15) }}>
-                        <Image style={styles.map} source={Imagepath.map} />
-                        {/* <MapView
-                            style={styles.mapStyle}
-                            initialRegion={{
-                                latitude: 26.922070,
-                                longitude: 75.778885,
-                                latitudeDelta: 0.0922,
-                                longitudeDelta: 0.0421,
+            <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
+
+            <View style={{}}>
+                <BogoHedertop
+                    iconname='chevron-left'
+                    lefpress={() => navigation.goBack()}
+                    righttext='Help' />
+            </View>
+            <View>
+                <Image style={styles.logo} source={Imagepath.bogologo} />
+            </View>
+            <Text style={styles.heding}>Business Info</Text>
+            <View style={{ backgroundColor: '#FFFFFF', paddingHorizontal: scale(15) }}>
+                <Text style={styles.subtext}>Type your business name.</Text>
+                <View style={{ marginTop: scale(15), height: scale(340), width: '100%', overflow: 'hidden', borderRadius: 15 }}>
+                    <MapView
+                        style={styles.mapStyle}
+                        initialRegion={{
+                            latitude: 25.276987,
+                            longitude: 55.296249,
+                            latitudeDelta: 0.0043,
+                            longitudeDelta: 0.0034
+                        }}
+                        customMapStyle={mapStyle}>
+                        <Marker
+                            draggable
+                            coordinate={{
+                                latitude: 37.78825,
+                                longitude: -122.4324,
                             }}
-                            customMapStyle={mapStyle}>
-                            <Marker
-                                draggable
-                                coordinate={{
-                                    latitude: 37.78825,
-                                    longitude: -122.4324,
-                                }}
-                                onDragEnd={
-                                    (e) => alert(JSON.stringify(e.nativeEvent.coordinate))
-                                }
-                                title={'Test Marker'}
-                                description={'This is a description of the marker'}
-                            />
-                        </MapView> */}
-                        <View style={{ position: 'absolute', top: scale(30), alignSelf: 'center' ,}}>
-                            <View>
-                                <TextInput style={styles.inpute}
-                                    placeholder='serach restaurant/cafe'
-                                    placeholderTextColor='gray' />
-                                <Image style={{
-                                    width: scale(14), height: scale(16), resizeMode: 'contain',
-                                    position: 'absolute', top: scale(15), left: scale(10)
-                                }} source={Imagepath.search} />
-                            </View>
+                            onDragEnd={
+                                (e) => alert(JSON.stringify(e.nativeEvent.coordinate))
+                            }
+                            title={'Test Marker'}
+                            description={'This is a description of the marker'}
+                        />
+                    </MapView>
+                    <View style={{ position: 'absolute', top: scale(30), alignSelf: 'center', }}>
+                        <View>
+                            <TextInput style={styles.inpute}
+                                placeholder='serach restaurant/cafe'
+                                placeholderTextColor='gray' />
+                            <Image style={{
+                                width: scale(14), height: scale(16), resizeMode: 'contain',
+                                position: 'absolute', top: scale(15), left: scale(10)
+                            }} source={Imagepath.search} />
                         </View>
                     </View>
-                    <Text style={styles.subtext}>Can’t find what you are looking for?</Text>
-                    <View>
-                        <Text style={styles.menlorem}>By creating an account, you agree to BOGO’s{'\n'}
-                            <Text style={styles.lorem2}>Terms and Conditions</Text>
-                              {` `}  and
-                            <Text style={styles.lorem2}>{` `} Privacy Policy</Text>
-                        </Text>
-                    </View>
-                    <View style={{ paddingHorizontal: scale(10), marginTop: scale(75), bottom: scale(55), }}>
-                        <Buttun style={{ backgroundColor: '#029CAB' }}
-                            title='Submit'
-                            onPress={() => navigation.navigate('Business_Info2')} />
-                    </View>
                 </View>
-            </ScrollView>
+                <Text style={styles.subtext}>Can’t find what you are looking for?</Text>
+                <View>
+                    <Text style={styles.menlorem}>By creating an account, you agree to BOGO’s{'\n'}
+                        <Text style={styles.lorem2}>Terms and Conditions</Text>
+                        {` `}  and
+                        <Text style={styles.lorem2}>{` `} Privacy Policy</Text>
+                    </Text>
+                </View>
+                <View style={{ paddingHorizontal: scale(10), marginTop: scale(75), bottom: scale(55), }}>
+                    <Buttun style={{ backgroundColor: '#029CAB' }}
+                        title='Submit'
+                        onPress={() => navigation.navigate('Business_Info2')} />
+                </View>
+            </View>
+
         </LinearGradient>
     )
 }
@@ -166,7 +165,7 @@ const mapStyle = [
 
 const styles = ScaledSheet.create({
     linearGradient: {
-        flex: 1, 
+        flex: 1,
     },
     logo: {
         width: '120@s', height: '80@s', tintColor: 'white',
@@ -196,6 +195,16 @@ const styles = ScaledSheet.create({
         width: '270@s', backgroundColor: '#FFFFFF',
         padding: '10@s', borderRadius: '20@s',
         paddingHorizontal: '30@s', color: 'black'
+    },
+    mapStyle: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        borderRadius: 10,
+
+
     },
 
 })

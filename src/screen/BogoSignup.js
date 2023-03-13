@@ -132,6 +132,7 @@ const BogoSignup = ({ navigation }) => {
               textInputStyle={{ height: 50, padding: 10, }}
               // ref={phoneInput}
               defaultValue={value}
+              autoFocus={false}
               defaultCode="DM"
               layout="first"
               onChangeText={(text) => {
@@ -142,25 +143,25 @@ const BogoSignup = ({ navigation }) => {
               }}
               withDarkTheme
               withShadow
-              autoFocus
+              
             />
           </View>
 
 
-          <Buttun
-            title="Submit"
-            onPress={() => navigation.navigate('Bogoveryfycod')}
-            style={{
-              height: scale(50),
-              backgroundColor: '#029CAB',
-              alignSelf: 'center',
-              borderRadius: scale(6),
-              width: '95%',
-              justifyContent: 'center',
-              marginTop: scale(18),
-              marginBottom: scale(40)
-            }}
-          />
+            <Buttun
+              title="Submit"
+              onPress={() => navigation.navigate('Bogoveryfycod')}
+              style={{
+                height: scale(50),
+                backgroundColor: '#029CAB',
+                alignSelf: 'center',
+                borderRadius: scale(6),
+                width: '95%',
+                justifyContent: 'center',
+                marginTop: scale(18),
+                marginBottom: scale(40)
+              }}
+            />
 
         </View>
       </ScrollView>
@@ -215,12 +216,12 @@ const styles = ScaledSheet.create({
     fontWeight: '400',
     lineHeight: '15@s',
     color: '#8E8E8E',
-    left: '3@s',
+    
 
   },
   inputvew: {
     marginTop: '7@s',
-    marginLeft: '15@s'
+   paddingLeft:'10@s'
   },
   inputsye: {
     width: '95%',
@@ -253,8 +254,8 @@ const styles = ScaledSheet.create({
     marginBottom: '25@s'
   },
   eyeimg: {
-    height: '45@s',
-    width: '45@s',
+    height: '40@s',
+    width: '40@s',
     resizeMode: 'contain',
     tintColor: '#565656'
   },

@@ -1,16 +1,15 @@
 import React, { useRef, useState } from "react";
-import { View, Text, TouchableOpacity, TimePickerAndroid } from "react-native";
+import { View, Text, TouchableOpacity, TimePickerAndroid, Button } from "react-native";
 import { scale, ScaledSheet } from "react-native-size-matters";
 import InputeClass from "../common/InputeClass";
 import { ScrollView } from "react-native-gesture-handler";
 import SelectDropdown from 'react-native-select-dropdown'
 import Buttun from "../common/Buttun";
 import { Rating, } from 'react-native-ratings';
-import { Button } from "react-native-share";
 import DateTimePicker from '@react-native-community/datetimepicker';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import Icon from 'react-native-vector-icons/Feather';
-
+import { Dropdown } from 'react-native-element-dropdown';
 
 const Store = ({ navigation }) => {
     const [text, settext] = useState()
@@ -18,10 +17,9 @@ const Store = ({ navigation }) => {
     const ratingCompleted = () => {
 
     }
+    const refRBSheet = useRef();
 
-    // const [selectedTime, setSelectedTime] = useState('');
 
-    // const handleTimePicker = async () => {
     //     try {
     //         console.log('==>>>>try');
 
@@ -43,30 +41,63 @@ const Store = ({ navigation }) => {
     // };
 
 
-
-
     const city = [
-        'jaipur', 'ajmer', 'nagour', 'kota', 'dosa', 'uddaipur',
+        { label: 'Jaipur', value: '1' },
+        { label: 'Ajmer', value: '2' },
+        { label: 'Dosa', value: '3' },
+        { label: 'Nagour', value: '4' },
     ]
     const country = [
-        'India', 'Austrealia', 'Chaina', 'Ucreain', 'Iran', 'United Arab Emirates',
+        { label: 'India', value: '1' },
+        { label: 'Austrealia', value: '2' },
+        { label: 'Chaina', value: '3' },
+        { label: 'Ucreain', value: '4' },
+        { label: 'Iran', value: '5' },
+        { label: 'United Arab Emirates', value: '6' },
+
     ]
     const catgary = [
-        'catgary1', 'catgary2', 'catgary3', 'catgary4', 'catgary5', 'catgary6',
+        { label: 'catgary1', value: '1' },
+        { label: 'catgary2', value: '2' },
+        { label: 'catgary3', value: '3' },
+        { label: 'catgary4', value: '4' },
+        { label: 'catgary5', value: '5' },
+        { label: 'catgary6', value: '6' },
     ]
 
     const tag = [
-        '#!', '#2', '#3', '#4', '#5', '#6',
+        { label: '#1', value: '1' },
+        { label: '#2', value: '2' },
+        { label: '#3', value: '3' },
+        { label: '#4', value: '4' },
+        { label: '#5', value: '5' },
+        { label: '#6', value: '6' },
     ]
     const prize = [
-        '$10', '$20', '$30', '$40', '$50', '$60',
+        { label: '$10', value: '1' },
+        { label: '$20', value: '2' },
+        { label: '$30', value: '3' },
+        { label: '$40', value: '4' },
+        { label: '$50', value: '5' },
+        { label: '$60', value: '6' },
     ]
-    const time1 = [
-        '7:00 AM', '6:00 AM', '6:30 AM', '7:30 AM', '8:00 AM'
-    ]
-    const time2 = [
-        '6:30 PM', '7:30 PM', '6:00 PM', '7:00 PM', '8:00 PM'
-    ]
+  
+
+
+    const [value, setValue] = useState(null);
+    const [isFocus, setIsFocus] = useState(false);
+
+    const renderLabel = () => {
+        if (value || isFocus) {
+            return (
+                <View>
+
+                </View>
+            );
+        }
+        return null;
+    };
+
 
     return (
         <ScrollView style={{ backgroundColor: 'white', flex: 1 }}>
@@ -77,9 +108,9 @@ const Store = ({ navigation }) => {
                     returnKeyType='next'
                     onSubmitEditing={() => Ref1.current.focus()}
                     lebel='Business name'
-                    placeholder='Business name' 
+                    placeholder='Business name'
                     placeholderTextColor='gray'
-                    />
+                />
             </View>
             <View style={{ marginTop: scale(35) }}>
                 <InputeClass
@@ -99,86 +130,155 @@ const Store = ({ navigation }) => {
                 />
             </View> */}
             <View style={{ marginTop: scale(15) }}>
-                <View style={{ paddingHorizontal: scale(15), }}>
-                    <SelectDropdown
+                <View style={{ paddingHorizontal: scale(15), marginTop: scale(23) }}>
+
+                    {renderLabel()}
+                    <Dropdown
+                        style={[styles.dropdown, isFocus && { borderColor: '#9E9BA8' }]}
+                        placeholderStyle={styles.placeholderStyle}
+                        selectedTextStyle={styles.selectedTextStyle}
+                        inputSearchStyle={styles.inputSearchStyle}
+                        containerStyle={{ marginTop: -36, width: '94%', alignSelf: 'center', borderBottomEndRadius: 10, borderBottomStartRadius: 10 }}
                         data={city}
-                        buttonStyle={styles.buttan}
-                        buttonTextStyle={{ color: 'gray', textAlign: 'left' }}
-                        onSelect={(selectedItem, index) => {
-                            // console.log(selectedItem, index)
+                        // search
+                        maxHeight={300}
+                        labelField="label"
+                        valueField="value"
+                        placeholder={!isFocus ? 'City' : '...'}
+                        // searchPlaceholder="Search..."
+                        value={value}
+                        onFocus={() => setIsFocus(true)}
+                        onBlur={() => setIsFocus(false)}
+                        onChange={item => {
+                            setValue(item.value);
+                            setIsFocus(false);
                         }}
+                    // renderLeftIcon={() => (
+                    //   <Image source={Imagepath.Imagepath.Window}/>
+                    // )}
                     />
+
                 </View>
-                <View style={{ paddingHorizontal: scale(15), position: 'absolute',bottom:scale(55) }}>
+                <View style={{ paddingHorizontal: scale(15), position: 'absolute', }}>
                     <Text style={styles.topdext}>State/City</Text>
                 </View>
-                <View style={{ paddingHorizontal: scale(15), position: 'absolute', right: scale(10), top: scale(30) }}>
+                {/* <View style={{ paddingHorizontal: scale(15), position: 'absolute', right: scale(10), top: scale(30) }}>
                     <Icon name={'chevron-down'} size={30} color="black" />
-                </View>
+                </View> */}
             </View>
             <View style={{ marginTop: 'auto', marginTop: scale(35) }}>
                 <InputeClass
                     lebel='Postal Code'
                     placeholder='Postal code'
                     placeholderTextColor='gray'
-                    />
+                />
             </View>
 
-            <View style={{ marginTop: scale(15) }}>
+            <View style={{ marginTop: scale(30) }}>
                 <View style={{ paddingHorizontal: scale(15), }}>
-                    <SelectDropdown
+                    {renderLabel()}
+                    <Dropdown
+                        style={[styles.dropdown, isFocus && { borderColor: '#9E9BA8' }]}
+                        placeholderStyle={styles.placeholderStyle}
+                        selectedTextStyle={styles.selectedTextStyle}
+                        inputSearchStyle={styles.inputSearchStyle}
+                        containerStyle={{ marginTop: -36, width: '94%', alignSelf: 'center', borderBottomEndRadius: 10, borderBottomStartRadius: 10 }}
                         data={country}
-                        buttonStyle={styles.buttan}
-                        buttonTextStyle={{ color: 'gray', textAlign: 'left' }}
-                        onSelect={(selectedItem, index) => {
-                            // console.log(selectedItem, index)
+                        // search
+
+                        maxHeight={300}
+                        labelField="label"
+                        valueField="value"
+                        placeholder={!isFocus ? 'Country' : '...'}
+                        // searchPlaceholder="Search..."
+                        value={value}
+                        onFocus={() => setIsFocus(true)}
+                        onBlur={() => setIsFocus(false)}
+                        onChange={item => {
+                            setValue(item.value);
+                            setIsFocus(false);
                         }}
+                    // renderLeftIcon={() => (
+                    //   <Image source={Imagepath.Imagepath.Window}/>
+                    // )}
                     />
                 </View>
-                <View style={{ paddingHorizontal: scale(15), position: 'absolute', bottom:scale(55)}}>
+                <View style={{ paddingHorizontal: scale(15), position: 'absolute', marginTop: -25 }}>
                     <Text style={styles.topdext}>Country</Text>
                 </View>
-                <View style={{ paddingHorizontal: scale(15), position: 'absolute', right: scale(10), top: scale(30) }}>
+                {/* <View style={{ paddingHorizontal: scale(15), position: 'absolute', right: scale(10), top: scale(30) }}>
                     <Icon name={'chevron-down'} size={30} color="black" />
-                </View>
+                </View> */}
             </View>
 
-            <View style={{ marginTop: scale(15) }}>
+            <View style={{ marginTop: scale(35) }}>
                 <View style={{ paddingHorizontal: scale(15), }}>
-                    <SelectDropdown
+                    {renderLabel()}
+                    <Dropdown
+                        style={[styles.dropdown, isFocus && { borderColor: '#9E9BA8' }]}
+                        placeholderStyle={styles.placeholderStyle}
+                        selectedTextStyle={styles.selectedTextStyle}
+                        inputSearchStyle={styles.inputSearchStyle}
+                        containerStyle={{ marginTop: -36, width: '94%', alignSelf: 'center', borderBottomEndRadius: 10, borderBottomStartRadius: 10 }}
                         data={catgary}
-                        buttonStyle={styles.buttan}
-                        buttonTextStyle={{ color: 'gray', textAlign: 'left' }}
-                        onSelect={(selectedItem, index) => {
-                            // console.log(selectedItem, index)
+                        // search
+
+                        maxHeight={300}
+                        labelField="label"
+                        valueField="value"
+                        placeholder={!isFocus ? 'Country' : '...'}
+                        // searchPlaceholder="Search..."
+                        value={value}
+                        onFocus={() => setIsFocus(true)}
+                        onBlur={() => setIsFocus(false)}
+                        onChange={item => {
+                            setValue(item.value);
+                            setIsFocus(false);
                         }}
+                    // renderLeftIcon={() => (
+                    //   <Image source={Imagepath.Imagepath.Window}/>
+                    // )}
                     />
                 </View>
-                <View style={{ paddingHorizontal: scale(15), position: 'absolute',bottom:scale(55) }}>
+                <View style={{ paddingHorizontal: scale(15), position: 'absolute', bottom: scale(52) }}>
                     <Text style={styles.topdext}>Category</Text>
                 </View>
-                <View style={{ paddingHorizontal: scale(15), position: 'absolute', right: scale(10), top: scale(30) }}>
-                    <Icon name={'chevron-down'} size={30} color="black" />
-                </View>
+
             </View>
 
-            <View style={{ marginTop: scale(15) }}>
+            <View style={{ marginTop: scale(36) }}>
                 <View style={{ paddingHorizontal: scale(15), }}>
-                    <SelectDropdown
+                {renderLabel()}
+                    <Dropdown
+                        style={[styles.dropdown, isFocus && { borderColor: '#9E9BA8' }]}
+                        placeholderStyle={styles.placeholderStyle}
+                        selectedTextStyle={styles.selectedTextStyle}
+                        inputSearchStyle={styles.inputSearchStyle}
+                        containerStyle={{ marginTop: -36, width: '94%', alignSelf: 'center', borderBottomEndRadius: 10, borderBottomStartRadius: 10 }}
                         data={tag}
-                        buttonStyle={styles.buttan}
-                        buttonTextStyle={{ color: 'gray', textAlign: 'left' }}
-                        onSelect={(selectedItem, index) => {
-                            // console.log(selectedItem, index)
+                        // search
+
+                        maxHeight={300}
+                        labelField="label"
+                        valueField="value"
+                        placeholder={!isFocus ? 'Country' : '...'}
+                        // searchPlaceholder="Search..."
+                        value={value}
+                        onFocus={() => setIsFocus(true)}
+                        onBlur={() => setIsFocus(false)}
+                        onChange={item => {
+                            setValue(item.value);
+                            setIsFocus(false);
                         }}
+                    // renderLeftIcon={() => (
+                    //   <Image source={Imagepath.Imagepath.Window}/>
+                    // )}
                     />
                 </View>
-                <View style={{ paddingHorizontal: scale(15), position: 'absolute',bottom:scale(55) }}>
+                <View style={{ paddingHorizontal: scale(15), position: 'absolute', bottom: scale(53) }}>
                     <Text style={styles.topdext}>Tags</Text>
                 </View>
-                <View style={{ paddingHorizontal: scale(15), position: 'absolute', right: scale(10), top: scale(30) }}>
-                    <Icon name={'chevron-down'} size={30} color="black" />
-                </View>
+               
             </View>
 
             <View style={{ paddingHorizontal: scale(15) }}>
@@ -188,32 +288,7 @@ const Store = ({ navigation }) => {
             <View style={{ paddingHorizontal: scale(15) }}>
 
                 <View style={{ marginTop: scale(15) }}>
-                    {/* <View style={{ flexDirection: 'row', }}>
-                        <SelectDropdown
-                            data={time1}
-                            buttonStyle={styles.timer}
-                            buttonTextStyle={{ color: '#8E8E8E', textAlign: 'left' }}
-                            onSelect={(selectedItem, index) => {
-                                // console.log(selectedItem, index)
-                            }}
-                        />
-                        <SelectDropdown
 
-                            data={time2}
-                            buttonStyle={styles.timer}
-                            buttonTextStyle={{ color: '#8E8E8E', textAlign: 'left' }}
-                            onSelect={(selectedItem, index) => {
-                                // console.log(selectedItem, index)
-                            }}
-                        />
-                    </View> */}
-
-                    {/* <View>
-                        <TouchableOpacity onPress={handleTimePicker}>
-                            <Text style={{ fontSize: 30, color: 'red' }}>Select Time</Text>
-                        </TouchableOpacity>
-                        {selectedTime ? <Text>Selected Time: {time}</Text> : null}
-                    </View> */}
 
                     <View style={{ paddingHorizontal: scale(15), position: 'absolute', }}>
                         {/* <Text style={styles.topdext}>Hours of Operation</Text> */}
@@ -230,27 +305,42 @@ const Store = ({ navigation }) => {
                         />
                         <Text style={{ color: '#8E8E8E', fontSize: scale(13), top: 10, left: scale(20) }}>4.0 stars, 33 Google reviews</Text>
                     </View>
-
+                    <View style={{ paddingHorizontal: scale(15), }}>
+                        <Text style={styles.topdext}>Price Range</Text>
+                    </View>
                 </View>
             </View>
 
             <View style={{ marginTop: scale(15) }}>
                 <View style={{ paddingHorizontal: scale(15), }}>
-                    <SelectDropdown
+                {renderLabel()}
+                    <Dropdown
+                        style={[styles.dropdown, isFocus && { borderColor: '#9E9BA8' }]}
+                        placeholderStyle={styles.placeholderStyle}
+                        selectedTextStyle={styles.selectedTextStyle}
+                        inputSearchStyle={styles.inputSearchStyle}
+                        containerStyle={{ marginTop: -36, width: '94%', alignSelf: 'center', borderBottomEndRadius: 10, borderBottomStartRadius: 10 }}
                         data={prize}
-                        buttonStyle={styles.buttan}
-                        buttonTextStyle={{ color: 'gray', textAlign: 'left' }}
-                        onSelect={(selectedItem, index) => {
-                            // console.log(selectedItem, index)
+                        // search
+
+                        maxHeight={300}
+                        labelField="label"
+                        valueField="value"
+                        placeholder={!isFocus ? 'Country' : '...'}
+                        // searchPlaceholder="Search..."
+                        value={value}
+                        onFocus={() => setIsFocus(true)}
+                        onBlur={() => setIsFocus(false)}
+                        onChange={item => {
+                            setValue(item.value);
+                            setIsFocus(false);
                         }}
+                    // renderLeftIcon={() => (
+                    //   <Image source={Imagepath.Imagepath.Window}/>
+                    // )}
                     />
                 </View>
-                <View style={{ paddingHorizontal: scale(15), position: 'absolute',bottom:scale(55) }}>
-                    <Text style={styles.topdext}>Price Range</Text>
-                </View>
-                <View style={{ paddingHorizontal: scale(15), position: 'absolute', right: scale(10), top: scale(30) }}>
-                    <Icon name={'chevron-down'} size={30} color="black" />
-                </View>
+
 
                 <View style={{ marginTop: scale(50), bottom: scale(30), paddingHorizontal: scale(15) }}>
                     <Buttun style={{ backgroundColor: '#029CAB', }}
@@ -293,5 +383,28 @@ const styles = ScaledSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'red'
+    },
+    dropdown: {
+        height: 49,
+        borderColor: 'none',
+        borderRadius: 10,
+        paddingHorizontal: 8,
+        backgroundColor: '#F7F7F7',
+        elevation: 1
+    },
+    placeholderStyle: {
+        fontSize: 18,
+        paddingLeft: 17
+    },
+    selectedTextStyle: {
+        fontSize: 18,
+        paddingLeft: 17
+    },
+
+    inputSearchStyle: {
+        height: 30,
+        fontSize: 19,
+
+
     },
 })

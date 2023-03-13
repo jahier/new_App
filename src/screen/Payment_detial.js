@@ -26,8 +26,8 @@ const Payment_detial = ({ navigation }) => {
     };
 
     const handleConfirm = (date) => {
-        console.warn("A date has been picked: ", date);
-        let dteformate = moment(new Date(date)).format('h:mma');
+        // console.warn("A date has been picked: ", date);
+        let dteformate = moment(new Date(date)).format('DD-MM-YYYY');
      
         setisdate(dteformate)
         hideDatePicker();
@@ -149,7 +149,7 @@ const Payment_detial = ({ navigation }) => {
                     <View style={{ paddingHorizontal: scale(10), marginTop: scale(80), bottom: scale(60), }}>
                         <Buttun style={{ backgroundColor: '#029CAB' }}
                             title='Submit'
-                            onPress={() => navigation.navigate('select1')} />
+                            onPress={() => navigation.navigate('Select1')} />
                     </View>
 
                 </View>

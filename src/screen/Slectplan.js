@@ -19,7 +19,7 @@ const Slectplan = ({ navigation }) => {
     const city = [
         'Day', 'Week', 'Monthly', 'Year', 
     ]
-    const[show ,setshow]= useState()
+    const[show ,setshow]= useState('')
 
     const showbtn=()=>{
         setshow(!show)
@@ -94,17 +94,16 @@ const Slectplan = ({ navigation }) => {
                         <SelectDropdown 
                         
                     
-                        dropdownStyle={{width:'100%',color:'#3A3A3A'}}
-                    
+                        dropdownStyle={{width:'98%',color:'blue',borderRadius:10,marginTop:53,alignSelf:'center'}}
+                        animationType="slide"
                             data={city}
                             buttonStyle={styles.buttan}
                             buttonTextStyle={{ color: '#3A3A3A', textAlign: 'left', }}
                             onSelect={(selectedItem, index) => {
-                                // console.log(selectedItem, index)
                              
                             }}
                         />
-                         <TouchableOpacity style={{ paddingHorizontal: scale(15), position: 'absolute', right: scale(10), top: scale(30) }} onPress={()=>showbtn()}>
+                         <TouchableOpacity style={{ paddingHorizontal: scale(15), position: 'absolute', right: scale(10), top: scale(30) }} onPress={()=>showbtn('')}>
                     <Icon name={'chevron-down'} size={25} color="black" />
                 </TouchableOpacity>
                     </View>
@@ -307,11 +306,14 @@ const styles = ScaledSheet.create({
         color: '#8E8E8E'
     },
     slctpikrview: {
-        width: '100%', marginTop: '10@s'
+        width: '100%', marginTop: '10@s',
+        alignSelf:'center'
     },
-    dropdown: {
-        width: '100%'
-    },
+    // dropdown: {
+    //     width: '100%',
+    //     alignSelf:'center'
+
+    // },
     buttan: {
         width: '100%',
         height: 50,

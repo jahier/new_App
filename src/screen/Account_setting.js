@@ -87,6 +87,8 @@ const Account_setting = ({navigation}) => {
                             textInputStyle={{ height: 50, padding: 10, }}
                             // ref={phoneInput}
                             defaultValue={value}
+                            autoFocus={false}
+
                             defaultCode="DM"
                             layout="first"
                             onChangeText={(text) => {
@@ -97,7 +99,7 @@ const Account_setting = ({navigation}) => {
                             }}
                             withDarkTheme
                             withShadow
-                            autoFocus
+                        
                         />
                     </View>
 
@@ -146,7 +148,7 @@ const Account_setting = ({navigation}) => {
                                 marginBottom: 20
                             }}
                             title="Add to payment "
-                            // onPress={() => navigation.navigate()}
+                            onPress={() => navigation.navigate('Redemption_history')}
                         />
 
 

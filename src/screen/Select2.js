@@ -5,7 +5,7 @@ import { scale, ScaledSheet } from "react-native-size-matters";
 import Imagepath from "../asstes/Imagepath";
 import TopTab2 from "../common/TopTab2";
 
-const select2 = () => {
+const Select2 = () => {
     return (
         <View style={{ flex: 1 }}>
             <LinearGradient colors={['#88C541', '#2352A4',]} style={{ flex: 1 }}>
@@ -31,7 +31,7 @@ const select2 = () => {
 
     )
 }
-export default select2;
+export default Select2;
 const styles = ScaledSheet.create({
     logo: {
         tintColor: 'white', width: '100@s', height: '60@s',

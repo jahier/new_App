@@ -20,7 +20,7 @@ import Icon from 'react-native-vector-icons/dist/FontAwesome';
 import Imagepath from '../asstes/Imagepath';
 
 
-const Welcomebogo = ({navigation}) => {
+const Welcomebogo = ({ navigation }) => {
     const [hide, sethide] = useState()
 
     const hidee = () => {
@@ -29,7 +29,7 @@ const Welcomebogo = ({navigation}) => {
     return (
 
         <View style={styles.mainstyle}>
-            <StatusBar barStyle={'dark-content'} translucent backgroundColor="transparent" />
+            <StatusBar barStyle={'light-content'} translucent backgroundColor="transparent" />
 
             <LinearGradient colors={['#88C541', '#2352A4',]} style={styles.linearGradient}>
                 <View style={styles.logovew}>
@@ -62,11 +62,11 @@ const Welcomebogo = ({navigation}) => {
                         </TouchableOpacity>
 
                     </View>
+                    <TouchableOpacity>
+                        <Text style={styles.fogettxt}>Forget Password</Text>
+                    </TouchableOpacity>
 
-                    <Text style={styles.fogettxt}>Forget Password</Text>
-
-
-                    <TouchableOpacity style={styles.btn} onPress={()=>navigation.navigate('BogoSignup')}>
+                    <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('BogoSignup')}>
                         <Text style={styles.loginbtntxt}>Login</Text>
                     </TouchableOpacity>
 
@@ -86,8 +86,8 @@ const Welcomebogo = ({navigation}) => {
 
                     <View style={{ flexDirection: 'row', alignSelf: 'center', marginBottom: scale(35) }}>
                         <Text style={{ fontSize: scale(14), color: '#1478A8', }}>Don't have an account? </Text>
-                        <TouchableOpacity onPress={()=>navigation.navigate('BogoSignup')}>
-                            <Text style={{ fontSize: scale(14), color: '#1478A8', fontWeight: '700',textDecorationLine:'underline' }}>Register</Text>
+                        <TouchableOpacity onPress={() => navigation.navigate('BogoSignup')}>
+                            <Text style={{ fontSize: scale(14), color: '#1478A8', fontWeight: '700', textDecorationLine: 'underline' }}>Register</Text>
                         </TouchableOpacity>
 
                     </View>
@@ -163,8 +163,8 @@ const styles = ScaledSheet.create({
         fontSize: '14@s'
     },
     eyeimg: {
-        height: '45@s',
-        width: '45@s',
+        height: '40@s',
+        width: '40@s',
         resizeMode: 'contain',
         tintColor: '#565656'
     },

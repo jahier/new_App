@@ -6,7 +6,7 @@ import { SceneView } from "react-navigation";
 import Imagepath from "../asstes/Imagepath";
 import Buttun from "../common/Buttun";
 
-const Gallery = () => {
+const Gallery = ({navigation}) => {
     return (
         <ScrollView >
             <View style={{ paddingHorizontal: scale(15), marginTop: scale(10) }}>

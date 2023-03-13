@@ -48,6 +48,7 @@ const Bogoveryfycod = ({ navigation }) => {
                             containerStyle={{ width: '80%', alignSelf: 'center' }}
                             textInputStyle={{ borderWidth: 1, borderColor: '#029CAB', borderRadius: 10, borderBottomWidth: 1, backgroundColor: '#F7F7F7' }}
                             inputCount={4}
+                            autoFocus={false}
                         />
 
                     </View>

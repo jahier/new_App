@@ -6,22 +6,15 @@ import Carousel from 'react-native-snap-carousel';
 import Video from 'react-native-video';
 import Slider from '@react-native-community/slider';
 import Buttun from '../common/Buttun';
+import VideoPlayer from 'react-native-video-player';
 
 
 
 const Network = ({ navigation }) => {
-
+    const videoPlayer = useRef(null);
     const [videoProgress, setVideoProgress] = useState(0);
 
-    const data = [
-
-        { video: require('../asstes/video/video.mp4') },
-        { video: require('../asstes/video/video.mp4') },
-        { video: require('../asstes/video/video.mp4') },
-        { video: require('../asstes/video/video.mp4') },
-
-
-    ];
+   
 
 
 
@@ -41,41 +34,28 @@ const Network = ({ navigation }) => {
 
             <LinearGradient colors={['#88C541', '#2352A4',]} style={styles.linearGradient}>
                 <StatusBar barStyle={'light-content'} translucent backgroundColor="transparent" />
-                <View style={styles.sliderImgView}>
-                    <Carousel
-                        data={data}
-                        renderItem={renderItem}
-                        sliderWidth={300}
-                        itemWidth={200}
-                    // containerCustomStyle={{ marginTop: 20, }}
-                    // itemHeight={250}
-                    // snapToInterval={250}
-                    // snapToAlignment="center"
-                    />
-                </View>
+               
                 {/* <View style={{ height: 300, width: 400, alignItems: 'center', marginTop: 20, backgroundColor: 'blue' }}>
                     <Video style={{ height: '100%', width: 300, marginTop: 40, alignSelf: 'center' }} source={require('../asstes/video/video.mp4')} />
                 </View> */}
 
-                <View>
-                    <Video source={require('../asstes/video/video.mp4')} // replace with your video url
-                        resizeMode="contain"
-                        onProgress={(data) => {
-                            setVideoProgress(data.currentTime / data.seekableDuration);
-                        }}
-                        style={styles.video} />
+                <View style={{marginTop:50,width:'100%',}}>
+                   
 
-                    <Slider minimumValue={0}
-                        maximumValue={3}
-                        value={videoProgress}
-                        minimumTrackTintColor="#FFFFFF"
-                        maximumTrackTintColor="#000000"
-                        thumbTintColor="#FFFFFF"
-
-                        onValueChange={(value) => {
-                            // Video.seekableDuration(value * Video.props.duration);
-                        }}
-                        style={styles.slider} />
+                    <VideoPlayer
+                        ref={videoPlayer}
+                        resizeMode={"cover"}
+                        onFullScreen={false}
+                        video={{uri: 'https://youtu.be/6IPQLOfTBhQ'}}
+                        videoWidth={300}
+                        videoHeight={215}
+                        showDuration={true}
+                        autoplay
+                        controlsTimeout={20}
+                        disableControlsAutoHide={true}
+                        defaultMuted={true}
+                        pauseOnPress={true}
+                    />
                 </View>
 
 

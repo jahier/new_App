@@ -6,7 +6,7 @@ import Imagepath from "../asstes/Imagepath";
 import VideoPlayer from 'react-native-video-player';
 
 
-const select1 = ({ navigation }) => {
+const Select1 = ({ navigation }) => {
     const videoPlayer = useRef(null);
 
     return (
@@ -78,7 +78,7 @@ const select1 = ({ navigation }) => {
                                         </View>
                                     </View>
                                 </View>
-                                <TouchableOpacity onPress={() => navigation.navigate('select2')}>
+                                <TouchableOpacity onPress={() => navigation.navigate('Select2')}>
                                     <Text style={{ fontSize: scale(14), color: '#029CAB', marginTop: scale(10), textAlign: 'right', bottom: scale(6) }}>Enroll in this program</Text>
 
                                 </TouchableOpacity>
@@ -94,7 +94,7 @@ const select1 = ({ navigation }) => {
         </View>
     )
 }
-export default select1;
+export default Select1;
 
 const styles = ScaledSheet.create({
     logo: {
