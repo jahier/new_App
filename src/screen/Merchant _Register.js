@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Image, StatusBar, Text, TouchableOpacity, View } from "react-native";
 import { FlatList, ScrollView } from "react-native-gesture-handler";
 import LinearGradient from "react-native-linear-gradient";
@@ -6,8 +6,16 @@ import { scale, ScaledSheet } from "react-native-size-matters";
 import Imagepath from "../asstes/Imagepath";
 import BogoHedertop from "../common/BogoHedertop";
 import Buttun from "../common/Buttun";
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import Font from "../asstes/Font";
+// import LogBox from 'react-native'
+
 
 const Merchant_Register = ({ navigation }) => {
+
+    // useEffect(() => {
+    //     LogBox.ignoreLogs(["VirtualizedLists should never be nested"])
+    //   }, [])
     const [slect, setslect] = useState(false)
     const data = [
         {
@@ -32,12 +40,13 @@ const Merchant_Register = ({ navigation }) => {
 
     const renderItem = ({ item }) => {
         return (
-            <View style={{ paddingLeft: scale(0) }}>
+            <View style={{ marginLeft: 12 }}>
                 <TouchableOpacity
                     onPress={() => setslect(item.id)}
                     style={{
                         backgroundColor: slect == item.id ? '#2352A4' : 'rgba(35, 82, 164, 0.2)',
-                        width: scale(152), height: scale(115), borderRadius: scale(12), margin: 10
+                        width: scale(152), height: scale(115), borderRadius: scale(12),
+                        justifyContent: 'center', alignItems: 'center', marginHorizontal: 5, marginVertical: 13
                     }}>
                     <Image style={{
                         width: scale(60), height: scale(55), alignSelf: 'center',
@@ -46,7 +55,7 @@ const Merchant_Register = ({ navigation }) => {
                     }} source={item.vecterimg} />
                     <Text style={{
                         fontSize: scale(14), fontWeight: '400', color: slect == item.id ? '#FFFFFF' : '#666666',
-                        textAlign: 'center', marginTop: scale(5)
+                        textAlign: 'center', marginTop: scale(5),fontFamily:Font.Bold
                     }}>{item.vectertext}</Text>
                 </TouchableOpacity>
             </View>
@@ -54,7 +63,8 @@ const Merchant_Register = ({ navigation }) => {
     }
 
     return (
-        <ScrollView style={{ flex: 1 }}>
+        <KeyboardAwareScrollView style={{ flex: 1 }}>
+
             <LinearGradient colors={['#88C541', '#2352A4',]} style={styles.linearGradient}>
                 <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
 
@@ -66,7 +76,7 @@ const Merchant_Register = ({ navigation }) => {
                 </View>
 
 
-                <View>
+                <View style={{width:'100%',marginTop:26}}>
                     <Image style={styles.homeimg} source={Imagepath.Vectorhome} />
                 </View>
                 <Text style={styles.hedingtext}>Business Type</Text>
@@ -78,6 +88,8 @@ const Merchant_Register = ({ navigation }) => {
                                 numColumns={2}
                                 data={data}
                                 renderItem={renderItem}
+                                
+                                scrollEnabled={false}
                             />
                         </View>
                         <View>
@@ -97,7 +109,8 @@ const Merchant_Register = ({ navigation }) => {
 
 
             </LinearGradient>
-        </ScrollView>
+        </KeyboardAwareScrollView>
+
     )
 }
 export default Merchant_Register;
@@ -113,7 +126,7 @@ const styles = ScaledSheet.create({
     hedingtext: {
         textAlign: 'center', fontSize: '32@s',
         fontWeight: '700', color: '#FFFFFF',
-        marginTop: '15@s'
+        marginTop: '15@s',fontFamily:Font.Bold
     },
     whiteview: {
         backgroundColor: 'white', width: '100%',
@@ -121,16 +134,17 @@ const styles = ScaledSheet.create({
     },
     loremtext: {
         color: '#1478A8', fontSize: '14@s',
-        textAlign: 'center', marginTop: '15@s'
+        marginTop: '15@s',
+        textAlign: 'center', marginTop: '15@s',fontFamily:Font.Bold
     },
 
     menlorem: {
         fontSize: '13@s', fontWeight: '400',
         color: '#8E8E8E', textAlign: 'center',
-        marginTop: '15@s'
+        marginTop: '15@s',fontFamily:Font.Bold
     },
     lorem2: {
         fontSize: '13@s', fontWeight: '400',
-        color: '#1478A8'
+        color: '#1478A8',fontFamily:Font.Bold
     },
 })

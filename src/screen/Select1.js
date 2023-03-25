@@ -4,13 +4,15 @@ import LinearGradient from "react-native-linear-gradient";
 import { scale, ScaledSheet } from "react-native-size-matters";
 import Imagepath from "../asstes/Imagepath";
 import VideoPlayer from 'react-native-video-player';
+import Font from "../asstes/Font";
+import { ScrollView } from "react-native-gesture-handler";
 
 
 const Select1 = ({ navigation }) => {
     const videoPlayer = useRef(null);
 
     return (
-        <View style={{ flex: 1, }}>
+        <ScrollView style={{ flex: 1, }}>
 
             <LinearGradient colors={['#88C541', '#2352A4',]} style={{ flex: 1 }}>
                 <View style={{ flexDirection: 'row' }}>
@@ -55,7 +57,7 @@ const Select1 = ({ navigation }) => {
                         <View style={{ paddingHorizontal: scale(15) }}>
                             <View style={{ backgroundColor: '#F9F9F9', elevation: 2, marginTop: scale(50), bottom: scale(40) }}>
                                 <View style={{ paddingHorizontal: scale(15), padding: scale(15) }}>
-                                    <Text style={{ color: '#000000', fontSize: scale(14) }}>Launch an influencer campaign and {'\n'}grow your reach online</Text>
+                                    <Text style={{ color: '#000000', fontSize: scale(14) ,fontFamily:Font.Bold}}>Launch an influencer campaign and {'\n'}grow your reach online</Text>
                                     <View style={{ flexDirection: 'row' }}>
                                         <View style={{ flexDirection: 'row', marginTop: scale(15) }}>
                                             <VideoPlayer style={styles.video}
@@ -79,7 +81,7 @@ const Select1 = ({ navigation }) => {
                                     </View>
                                 </View>
                                 <TouchableOpacity onPress={() => navigation.navigate('Select2')}>
-                                    <Text style={{ fontSize: scale(14), color: '#029CAB', marginTop: scale(10), textAlign: 'right', bottom: scale(6) }}>Enroll in this program</Text>
+                                    <Text style={{ fontSize: scale(14), color: '#029CAB', marginTop: scale(10), textAlign: 'right', bottom: scale(6),fontFamily:Font.Bold }}>Enroll in this program</Text>
 
                                 </TouchableOpacity>
 
@@ -91,7 +93,7 @@ const Select1 = ({ navigation }) => {
                     </View>
                 </View>
             </LinearGradient>
-        </View>
+        </ScrollView>
     )
 }
 export default Select1;
@@ -103,10 +105,10 @@ const styles = ScaledSheet.create({
     },
     whiteview: {
         borderTopRightRadius: '20@s', borderTopLeftRadius: '15@s',
-        backgroundColor: '#FFFFFF', marginTop: '15@s'
+        backgroundColor: '#FFFFFF', marginTop: '20@s'
     },
     overrivew: {
-        color: '#130F26', fontSize: '14@s',
+        color: '#130F26', fontSize: '14@s',fontFamily:Font.Bold
     },
     vouchernumber: {
         color: '#029CAB', fontSize: '35@s', fontWeight: 'bold',
@@ -114,7 +116,7 @@ const styles = ScaledSheet.create({
     },
     countvoucher: {
         color: '#979797', fontSize: '13@s',
-        textAlign: 'center'
+        textAlign: 'center',fontFamily:Font.Bold
     },
     voucherview: {
         position: 'absolute', top: scale(35),

@@ -3,6 +3,7 @@ import React from "react";
 import { Alert, Share, TouchableOpacity } from "react-native";
 import { scale } from "react-native-size-matters";
 import Icon from 'react-native-vector-icons/Feather';
+import Font from "../asstes/Font";
 
 const BogoHedertop = (props) => {
 
@@ -19,7 +20,7 @@ const BogoHedertop = (props) => {
             </View>
             <View style={{ flex: 1, alignItems: 'flex-end', paddingHorizontal: scale(10) }}>
                 <TouchableOpacity>
-                    <Text style={{ color: 'white', fontWeight: '400', fontSize: scale(15) }}>{props.righttext}</Text>
+                    <Text style={{ color: 'white', fontWeight: '400', fontSize: scale(15),fontFamily:Font.Bold }}>{props.righttext}</Text>
                 </TouchableOpacity>
             </View>
 
@@ -45,6 +46,7 @@ const styles = StyleSheet.create({
 
     },
     hedertext: {
-        fontSize: 16, color: 'black', textAlign: 'center'
+        fontSize: 16, color: 'black', textAlign: 'center',
+        fontFamily:Font.Bold
     },
 })

@@ -8,6 +8,7 @@ import Hedertop from '../common/Hedertop';
 import Buttun from '../common/Buttun';
 import { ScrollView } from 'react-native-gesture-handler';
 import BogoHedertop from '../common/BogoHedertop';
+import Font from '../asstes/Font';
 
 
 const Bogoveryfycod = ({ navigation }) => {
@@ -33,7 +34,7 @@ const Bogoveryfycod = ({ navigation }) => {
 
                 </View>
 
-                <Text style={styles.vreyfycod}>Verify Code</Text>
+                <Text style={styles.vreyfycodtxt}>Verify Code</Text>
 
 
                 <View style={styles.inputvew}>
@@ -56,7 +57,7 @@ const Bogoveryfycod = ({ navigation }) => {
 
 
                     <View style={styles.resndvew}>
-                        <Text style={styles.text}>Did not received the code?{'\n'}</Text>
+                        <Text style={styles.didtext}>Did not received the code?{'\n'}</Text>
                         <TouchableOpacity style={{}}>
                             <Text style={{ fontSize: scale(14), fontWeight: '400', color: '#1478A8' }}>Resend Code</Text>
                         </TouchableOpacity>
@@ -101,13 +102,14 @@ const styles = ScaledSheet.create({
         resizeMode: 'contain',
         top: '16@s'
     },
-    vreyfycod: {
+    vreyfycodtxt: {
         fontSize: '32@s',
         lineHeight: '39@s',
         fontWeight: '700',
         top: '30@s',
         color: '#FFFFFF',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily:Font.Bold
     },
     inputvew: {
         // height: '260@s',
@@ -128,15 +130,19 @@ const styles = ScaledSheet.create({
         letterSpacing: '-0.3@s',
         textAlign: 'center',
         top: '5@s',
+        fontFamily:Font.Bold
+
+
 
     },
 
-    text: {
+    didtext: {
         fontSize: '14@s',
         fontWeight: '200',
         textAlign: 'center',
         top: '14@s',
-        color: '#8E8E8E'
+        color: '#8E8E8E',
+        fontFamily:Font.Meduam
     },
     btn: {
         height: '42@s',
@@ -151,6 +157,7 @@ const styles = ScaledSheet.create({
     },
     resndvew: {
 
-        alignItems: 'center'
+        alignItems: 'center',
+        fontFamily:Font.Bold
     }
 })

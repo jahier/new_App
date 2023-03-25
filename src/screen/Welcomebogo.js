@@ -18,7 +18,8 @@ import { scale, ScaledSheet } from 'react-native-size-matters';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 import Imagepath from '../asstes/Imagepath';
-
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import Font from '../asstes/Font';
 
 const Welcomebogo = ({ navigation }) => {
     const [hide, sethide] = useState()
@@ -30,72 +31,75 @@ const Welcomebogo = ({ navigation }) => {
 
         <View style={styles.mainstyle}>
             <StatusBar barStyle={'light-content'} translucent backgroundColor="transparent" />
+          
+                <LinearGradient colors={['#88C541', '#2352A4',]} style={styles.linearGradient}>
+                    <View style={styles.logovew}>
+                        <Image style={styles.bogologo} source={Imagepath.bogiwhitelogo} />
 
-            <LinearGradient colors={['#88C541', '#2352A4',]} style={styles.linearGradient}>
-                <View style={styles.logovew}>
-                    <Image style={styles.bogologo} source={Imagepath.bogiwhitelogo} />
-
-
-                </View>
-
-                <Text style={styles.welcmtxt}>Welcome Back!</Text>
-
-                <View style={styles.whitevew}>
-                    <Text style={styles.logintxt}>Login</Text>
-                    <View>
-                        <TextInput style={styles.input}
-                            placeholder="Email address"
-                            placeholderTextColor="#8E8E8E"
-
-                        />
-                    </View>
-
-                    <View>
-                        <TextInput style={styles.input2}
-                            placeholder="Password"
-                            placeholderTextColor="#8E8E8E"
-                            secureTextEntry={hide ? false : true}
-
-                        />
-                        <TouchableOpacity style={styles.tuchebl} onPress={() => hidee()}>
-                            <Image style={styles.eyeimg} source={hide ? Imagepath.eye : Imagepath.hide} />
-                        </TouchableOpacity>
 
                     </View>
-                    <TouchableOpacity>
-                        <Text style={styles.fogettxt}>Forget Password</Text>
-                    </TouchableOpacity>
+                  
+                  <Text style={styles.welcmtxt}>Welcome Back!</Text>
 
-                    <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('BogoSignup')}>
-                        <Text style={styles.loginbtntxt}>Login</Text>
-                    </TouchableOpacity>
+                    <View style={styles.whitevew}>
+                        <Text style={styles.logintxt}>Login</Text>
+                        <View>
 
-                    <Text style={styles.or}>OR</Text>
+                            <TextInput style={styles.input}
+                                placeholder="Email address"
+                                placeholderTextColor="#8E8E8E"
 
-                    <View style={{ flexDirection: 'row', width: '100%', justifyContent: 'space-between', padding: 20, marginTop: scale(5) }}>
+                            />
 
-                        <TouchableOpacity style={{ width: '49%', backgroundColor: '#E9E8E8', height: scale(52), alignItems: 'center', justifyContent: 'center', borderRadius: scale(5) }}>
-                            <Image style={styles.gogllgo} source={Imagepath.googlelogo} />
+                        </View>
+
+                        <View>
+                            <TextInput style={styles.input2}
+                                placeholder="Password"
+                                placeholderTextColor="#8E8E8E"
+                                secureTextEntry={hide ? false : true}
+
+                            />
+                            <TouchableOpacity style={styles.eyetuchebl} onPress={() => hidee()}>
+                                <Image style={styles.eyeimg} source={hide ? Imagepath.eye : Imagepath.hide} />
+                            </TouchableOpacity>
+
+                        </View>
+                        <TouchableOpacity onPress={()=>navigation.navigate('Forget_Password')}>
+                            <Text style={styles.fogettxt}>Forget Password</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={{ width: '49%', backgroundColor: '#E9E8E8', height: scale(52), alignItems: 'center', justifyContent: 'center', borderRadius: scale(5) }}>
-                            <Icon name="facebook" size={25} color="blue" />
+                        <TouchableOpacity style={styles.loginbtn} onPress={() => navigation.navigate('BogoSignup')}>
+                            <Text style={styles.loginbtntxt}>Login</Text>
                         </TouchableOpacity>
+
+                        <Text style={styles.ortxt}>OR</Text>
+
+                        <View style={{ flexDirection: 'row', width: '100%', justifyContent: 'space-between', padding: 20, marginTop: scale(5) }}>
+
+                            <TouchableOpacity style={{ width: '49%', backgroundColor: '#E9E8E8', height: scale(52), alignItems: 'center', justifyContent: 'center', borderRadius: scale(5) }}>
+                                <Image style={styles.googlelgo} source={Imagepath.googlelogo} />
+                            </TouchableOpacity>
+
+                            <TouchableOpacity style={{ width: '49%', backgroundColor: '#E9E8E8', height: scale(52), alignItems: 'center', justifyContent: 'center', borderRadius: scale(5) }}>
+                                <Icon name="facebook" size={25} color="blue" />
+                            </TouchableOpacity>
+
+                        </View>
+
+                        <View style={{ flexDirection: 'row', alignSelf: 'center', marginBottom: scale(35) }}>
+                            <Text style={{ fontSize: scale(14), color: '#1478A8', fontFamily: Font.Regular }}>Don't have an account? </Text>
+                            <TouchableOpacity  onPress={() => navigation.navigate('BogoSignup')}>
+
+                                <Text style={{ fontSize: scale(14), color: '#1478A8', fontWeight: '700', textDecorationLine: 'underline', fontFamily: Font.Bold }}>Register</Text>
+                            </TouchableOpacity>
+
+                        </View>
 
                     </View>
 
-                    <View style={{ flexDirection: 'row', alignSelf: 'center', marginBottom: scale(35) }}>
-                        <Text style={{ fontSize: scale(14), color: '#1478A8', }}>Don't have an account? </Text>
-                        <TouchableOpacity onPress={() => navigation.navigate('BogoSignup')}>
-                            <Text style={{ fontSize: scale(14), color: '#1478A8', fontWeight: '700', textDecorationLine: 'underline' }}>Register</Text>
-                        </TouchableOpacity>
-
-                    </View>
-
-                </View>
-
-            </LinearGradient>
-
+                </LinearGradient>
+           
         </View>
 
     );
@@ -118,29 +122,33 @@ const styles = ScaledSheet.create({
     },
     logovew: {
         alignItems: 'center',
-
+        width: '100%',
+        marginTop: '30@s'
     },
     welcmtxt: {
         fontSize: '32@s',
         lineHeight: '39@s',
         fontWeight: '700',
-        top: '60@s',
+        top: '80@s',
         color: '#FFFFFF',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily: Font.Bold
     },
     whitevew: {
         height: '520@s',
         width: '100%',
         borderTopRightRadius: '130@s',
         backgroundColor: '#FFFFFF',
-        marginTop: '125@s'
+        marginTop: '160@s'
     },
     logintxt: {
         color: '#1478A8',
         fontSize: '24@s',
         fontWeight: '700',
         textAlign: 'center',
-        top: '30@s'
+        top: '30@s',
+        fontFamily: Font.Bold,
+
     },
     input: {
         backgroundColor: "#F7F7F7",
@@ -150,7 +158,11 @@ const styles = ScaledSheet.create({
         alignSelf: 'center',
         borderRadius: '5@s',
         paddingLeft: '18@s',
-        fontSize: '14@s'
+        fontSize: '14@s',
+        fontFamily: Font.Meduam,
+        color:'black'
+
+
     },
     input2: {
         backgroundColor: "#F7F7F7",
@@ -160,7 +172,11 @@ const styles = ScaledSheet.create({
         alignSelf: 'center',
         borderRadius: '5@s',
         paddingLeft: '18@s',
-        fontSize: '14@s'
+        fontSize: '14@s',
+        fontFamily: Font.Meduam,
+        color:'black'
+
+
     },
     eyeimg: {
         height: '40@s',
@@ -168,7 +184,7 @@ const styles = ScaledSheet.create({
         resizeMode: 'contain',
         tintColor: '#565656'
     },
-    tuchebl: {
+    eyetuchebl: {
         position: 'absolute',
         right: '22@s',
         top: '33@s'
@@ -181,9 +197,11 @@ const styles = ScaledSheet.create({
         lineHeight: '19@s',
         letterSpacing: '-0.3@s',
         right: '20@s',
-        top: '17@s'
+        top: '15@s',
+        fontFamily: Font.Bold
+
     },
-    btn: {
+    loginbtn: {
         height: '50@s',
         width: '90%',
         borderRadius: '5@s',
@@ -199,19 +217,23 @@ const styles = ScaledSheet.create({
     loginbtntxt: {
         fontSize: '16@s',
         color: '#FFFFFF',
-        fontWeight: '700'
+        fontWeight: '700',
+        fontFamily: Font.Bold
+
 
     },
-    or: {
+    ortxt: {
         fontSize: '13@s',
         lineHeight: '19.5@s',
         letterSpacing: '-0.3@s',
         fontWeight: '600',
         color: '#1478A8',
         top: '15@s',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily: Font.Bold
+
     },
-    gogllgo: {
+    googlelgo: {
         height: '25@s',
         width: '25@s'
     }

@@ -7,6 +7,7 @@ import Imagepath from "../asstes/Imagepath";
 import BogoHedertop from "../common/BogoHedertop";
 import Buttun from "../common/Buttun";
 import MapView, { Marker } from 'react-native-maps';
+import Font from "../asstes/Font";
 
 
 
@@ -26,7 +27,7 @@ const Business_Info = ({ navigation }) => {
                 <Image style={styles.logo} source={Imagepath.bogologo} />
             </View>
             <Text style={styles.heding}>Business Info</Text>
-            <View style={{ backgroundColor: '#FFFFFF', paddingHorizontal: scale(15) }}>
+            <View style={{ backgroundColor: '#FFFFFF', paddingHorizontal: scale(15),width:'100%',height:800 }}>
                 <Text style={styles.subtext}>Type your business name.</Text>
                 <View style={{ marginTop: scale(15), height: scale(340), width: '100%', overflow: 'hidden', borderRadius: 15 }}>
                     <MapView
@@ -64,14 +65,14 @@ const Business_Info = ({ navigation }) => {
                     </View>
                 </View>
                 <Text style={styles.subtext}>Can’t find what you are looking for?</Text>
-                <View>
+                {/* <View>
                     <Text style={styles.menlorem}>By creating an account, you agree to BOGO’s{'\n'}
                         <Text style={styles.lorem2}>Terms and Conditions</Text>
                         {` `}  and
                         <Text style={styles.lorem2}>{` `} Privacy Policy</Text>
                     </Text>
-                </View>
-                <View style={{ paddingHorizontal: scale(10), marginTop: scale(75), bottom: scale(55), }}>
+                </View> */}
+                <View style={{ paddingHorizontal: scale(10), marginTop: scale(85), bottom: scale(55), }}>
                     <Buttun style={{ backgroundColor: '#029CAB' }}
                         title='Submit'
                         onPress={() => navigation.navigate('Business_Info2')} />
@@ -173,20 +174,20 @@ const styles = ScaledSheet.create({
     },
     heding: {
         color: '#FFFFFF', fontSize: '32@s', textAlign: 'center',
-        fontWeight: '700', bottom: '20@s'
+        fontWeight: '700', bottom: '20@s', fontFamily: Font.Bold
     },
     subtext: {
         textAlign: 'center', fontSize: '16@s', fontWeight: '600',
-        color: '#1478A8', marginTop: '15@s'
+        color: '#1478A8', marginTop: '15@s', fontFamily: Font.Bold
     },
     menlorem: {
         fontSize: '13@s', fontWeight: '400',
         color: '#8E8E8E', textAlign: 'center',
-        marginTop: '15@s'
+        marginTop: '15@s', fontFamily: Font.Bold
     },
     lorem2: {
         fontSize: '13@s', fontWeight: '400',
-        color: '#1478A8'
+        color: '#1478A8', fontFamily: Font.Bold
     },
     map: {
         resizeMode: 'contain', width: '100%'
@@ -194,7 +195,7 @@ const styles = ScaledSheet.create({
     inpute: {
         width: '270@s', backgroundColor: '#FFFFFF',
         padding: '10@s', borderRadius: '20@s',
-        paddingHorizontal: '30@s', color: 'black'
+        paddingHorizontal: '30@s', color: 'black', fontFamily: Font.Bold
     },
     mapStyle: {
         position: 'absolute',

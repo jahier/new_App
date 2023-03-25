@@ -10,6 +10,7 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import Icon from 'react-native-vector-icons/Feather';
 import { Dropdown } from 'react-native-element-dropdown';
+import Font from "../asstes/Font";
 
 const Store = ({ navigation }) => {
     const [text, settext] = useState()
@@ -81,7 +82,7 @@ const Store = ({ navigation }) => {
         { label: '$50', value: '5' },
         { label: '$60', value: '6' },
     ]
-  
+
 
 
     const [value, setValue] = useState(null);
@@ -109,7 +110,7 @@ const Store = ({ navigation }) => {
                     onSubmitEditing={() => Ref1.current.focus()}
                     lebel='Business name'
                     placeholder='Business name'
-                    placeholderTextColor='gray'
+                    placeholderTextColor='#8E8E8E'
                 />
             </View>
             <View style={{ marginTop: scale(35) }}>
@@ -117,7 +118,7 @@ const Store = ({ navigation }) => {
                     lebel='Address'
                     placeholder='Address'
                     ref={Ref1}
-                    placeholderTextColor='gray'
+                    placeholderTextColor='#8E8E8E'
 
                 />
             </View>
@@ -248,7 +249,7 @@ const Store = ({ navigation }) => {
 
             <View style={{ marginTop: scale(36) }}>
                 <View style={{ paddingHorizontal: scale(15), }}>
-                {renderLabel()}
+                    {renderLabel()}
                     <Dropdown
                         style={[styles.dropdown, isFocus && { borderColor: '#9E9BA8' }]}
                         placeholderStyle={styles.placeholderStyle}
@@ -278,7 +279,7 @@ const Store = ({ navigation }) => {
                 <View style={{ paddingHorizontal: scale(15), position: 'absolute', bottom: scale(53) }}>
                     <Text style={styles.topdext}>Tags</Text>
                 </View>
-               
+
             </View>
 
             <View style={{ paddingHorizontal: scale(15) }}>
@@ -313,7 +314,7 @@ const Store = ({ navigation }) => {
 
             <View style={{ marginTop: scale(15) }}>
                 <View style={{ paddingHorizontal: scale(15), }}>
-                {renderLabel()}
+                    {renderLabel()}
                     <Dropdown
                         style={[styles.dropdown, isFocus && { borderColor: '#9E9BA8' }]}
                         placeholderStyle={styles.placeholderStyle}
@@ -364,7 +365,7 @@ const styles = ScaledSheet.create({
 
     },
     topdext: {
-        fontSize: '13@s', color: '#8E8E8E',
+        fontSize: '13@s', color: 'black', fontFamily: Font.Bold
 
     },
     timer: {
@@ -376,7 +377,7 @@ const styles = ScaledSheet.create({
         margin: '10@s'
     },
     ratinttext: {
-        fontSize: '13@s', color: '#8E8E8E',
+        fontSize: '13@s', color: '#8E8E8E', fontFamily: Font.Bold
     },
     container: {
         flex: 1,
@@ -394,16 +395,20 @@ const styles = ScaledSheet.create({
     },
     placeholderStyle: {
         fontSize: 18,
-        paddingLeft: 17
+        paddingLeft: 17,
+        fontFamily: Font.Bold,
+        color: '#8E8E8E'
     },
     selectedTextStyle: {
         fontSize: 18,
-        paddingLeft: 17
+        paddingLeft: 17,
+        fontFamily: Font.Bold
     },
 
     inputSearchStyle: {
         height: 30,
         fontSize: 19,
+        fontFamily: Font.Bold
 
 
     },

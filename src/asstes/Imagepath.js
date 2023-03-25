@@ -47,6 +47,7 @@ const Imagepath = {
     line3: require('../asstes/image/Vector13.png'),
     down: require('../asstes/image/Stroke1.png'),
     maskgrup: require('../asstes/image/MaskGroup1.png'),
+    gleryicione: require('../asstes/image/Image.png'),
 
 
 

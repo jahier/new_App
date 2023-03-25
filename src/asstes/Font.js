@@ -1,4 +1,6 @@
 const Font={
-    // Montserrat:require('../asstes/Fontfamily/Montserrat-Black.ttf')
+   Bold:'Montserrat-Black.ttf',
+   Regular:'Montserrat-Black.ttf',
+   Meduam:'Montserrat-Black.ttf'
 }
 export default Font;

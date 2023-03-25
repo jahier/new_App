@@ -6,6 +6,8 @@ import Imagepath from "../asstes/Imagepath";
 import BogoHedertop from "../common/BogoHedertop";
 import Buttun from "../common/Buttun";
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
+import Font from "../asstes/Font";
+import { ScrollView } from "react-native-gesture-handler";
 
 const Merchant_Register2 = ({ navigation }) => {
     const [btnslect, setbtnslect] = useState(false)
@@ -36,7 +38,7 @@ const Merchant_Register2 = ({ navigation }) => {
 
     const renderItem = ({ item }) => {
         return (
-            <View style={{ marginTop: scale(5) }}>
+            <View style={{ marginTop: scale(5)}}>
                 <TouchableOpacity
                     onPress={() => setslect(item.id)}
                     style={{
@@ -50,7 +52,7 @@ const Merchant_Register2 = ({ navigation }) => {
                     }} source={item.vecterimg} />
                     <Text style={{
                         fontSize: scale(12), fontWeight: '400', color: slect == item.id ? '#FFFFFF' : '#666666',
-                        textAlign: 'center', marginTop: scale(15)
+                        textAlign: 'center', marginTop: scale(15),fontFamily:Font.Bold
                     }}>{item.vectertext}</Text>
                 </TouchableOpacity>
             </View>
@@ -58,6 +60,7 @@ const Merchant_Register2 = ({ navigation }) => {
     }
 
     return (
+        <ScrollView>
         <LinearGradient colors={['#88C541', '#2352A4',]} style={styles.linearGradient}>
             <View>
                 <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
@@ -92,7 +95,7 @@ const Merchant_Register2 = ({ navigation }) => {
                                 backgroundColor: btnslect == '1' ? '#1478A8' : '#FFFFFF', paddingVertical: scale(10),
                                 margin: scale(10), borderRadius: scale(10)
                             }}>
-                            <Text style={{ fontSize: scale(16), color: btnslect == '1' ? '#FFFFFF' : '#1478A8', fontWeight: 'bold', textAlign: 'center', }}>Yes</Text>
+                            <Text style={{ fontSize: scale(16), color: btnslect == '1' ? '#FFFFFF' : '#1478A8', fontWeight: 'bold', textAlign: 'center',fontFamily:Font.Bold  }}>Yes</Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity onPress={() => btn('2')}
@@ -102,7 +105,7 @@ const Merchant_Register2 = ({ navigation }) => {
                                 backgroundColor: btnslect == '2' ? '#1478A8' : '#FFFFFF', paddingVertical: scale(10),
                                 margin: scale(10), borderRadius: scale(10)
                             }}>
-                            <Text style={{ fontSize: scale(16), color: btnslect == '2' ? '#FFFFFF' : '#1478A8', fontWeight: 'bold', textAlign: 'center', }}>No</Text>
+                            <Text style={{ fontSize: scale(16), color: btnslect == '2' ? '#FFFFFF' : '#1478A8', fontWeight: 'bold', textAlign: 'center',fontFamily:Font.Bold }}>No</Text>
                         </TouchableOpacity>
 
                     </View>
@@ -113,8 +116,8 @@ const Merchant_Register2 = ({ navigation }) => {
                             <Text style={styles.lorem2}>Privacy Policy</Text>
                         </Text>
                     </View>
-                    <View style={{ paddingHorizontal: scale(10), marginTop: scale(105), bottom: scale(85), }}>
-                        <Buttun style={{ backgroundColor: '#029CAB' }}
+                    <View style={{ paddingHorizontal: scale(10), marginTop: scale(60),  }}>
+                        <Buttun style={{ backgroundColor: '#029CAB', bottom: scale(30),}}
                             title='Submit'
                             onPress={() => navigation.navigate('Business_Info')} />
                     </View>
@@ -122,6 +125,7 @@ const Merchant_Register2 = ({ navigation }) => {
 
             </View>
         </LinearGradient>
+        </ScrollView>
     )
 }
 export default Merchant_Register2
@@ -138,21 +142,21 @@ const styles = ScaledSheet.create({
     hedingtext: {
         textAlign: 'center', fontSize: '32@s',
         fontWeight: '700', color: '#FFFFFF',
-        marginTop: '20@s'
+        marginTop: '20@s',fontFamily:Font.Bold
     },
     whiteview: {
         backgroundColor: 'white', width: '100%',
-        marginTop: '45@s', bottom: '20@s'
+        marginTop: '45@s', 
     },
     loremtext: {
         color: '#1478A8', fontSize: '14@s',
         textAlign: 'center', marginTop: '15@s',
-        fontWeight: '600'
+        fontWeight: '600',fontFamily:Font.Bold
     },
     loremtext2: {
         color: '#1478A8', fontSize: '15@s',
         textAlign: 'center', marginTop: '15@s',
-        fontWeight: '400'
+        fontWeight: '400',fontFamily:Font.Bold
     },
     btnview: {
         flexDirection: 'row', justifyContent: 'space-between',
@@ -161,11 +165,11 @@ const styles = ScaledSheet.create({
     menlorem: {
         fontSize: '13@s', fontWeight: '400',
         color: '#8E8E8E', textAlign: 'center',
-        marginTop: '15@s'
+        marginTop: '15@s',fontFamily:Font.Bold
     },
     lorem2: {
         fontSize: '13@s', fontWeight: '400',
-        color: '#1478A8'
+        color: '#1478A8',fontFamily:Font.Bold
     },
     // btn: {
     //     width: '150@s', borderWidth: '1@s', borderColor: '#1478A8',

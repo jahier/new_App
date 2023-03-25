@@ -2,6 +2,7 @@ import React from "react";
 import { View, Image, Text, TouchableOpacity } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 import { scale, ScaledSheet } from "react-native-size-matters";
+import Font from "../asstes/Font";
 import Imagepath from "../asstes/Imagepath";
 import TopTab2 from "../common/TopTab2";
 
@@ -18,8 +19,8 @@ const Select2 = () => {
                 <View style={{ bottom: scale(30), marginTop: scale(30) }}>
 
                     <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-                        <Image style={{ resizeMode: 'contain', tintColor: '#FFFFFF' }} source={Imagepath.campaigin} />
-                        <Text style={{ fontSize: scale(22), color: '#FFFFFF', fontWeight: 'bold', left: scale(10) }}>Campaign</Text>
+                        <Image style={{ resizeMode: 'contain', tintColor: '#FFFFFF', }} source={Imagepath.campaigin} />
+                        <Text style={{ fontSize: scale(22), color: '#FFFFFF', fontWeight: 'bold', left: scale(10),fontFamily:Font.Bold }}>Campaign</Text>
                     </View>
                 </View>
                 <TopTab2 />

@@ -5,6 +5,7 @@ import Imagepath from "../asstes/Imagepath";
 import Buttun from "../common/Buttun";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { ScrollView } from 'react-native-virtualized-view'
+import Font from "../asstes/Font";
 
 const Integration = ({navigation}) => {
     const data = [
@@ -86,15 +87,15 @@ const Integration = ({navigation}) => {
 export default Integration
 const styles = ScaledSheet.create({
     topdext: {
-        fontSize: '13@s', color: '#8E8E8E',
-        marginTop: '15@s'
+        fontSize: '13@s', color: 'black',
+        marginTop: '15@s',fontFamily:Font.Bold
     },
     subtext: {
         color: '#000000', fontSize: '14@s',
-        fontWeight: '400'
+        fontWeight: '400',fontFamily:Font.Bold
     },
     subtext2: {
         color: '#1478A8', fontSize: '14@s',
-        fontWeight: '400'
+        fontWeight: '400',fontFamily:Font.Bold
     },
 })

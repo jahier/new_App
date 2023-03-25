@@ -6,6 +6,8 @@ import PhoneInput from "react-native-phone-number-input";
 import Imagepath from '../asstes/Imagepath';
 import Hedertop from '../common/Hedertop';
 import Buttun from '../common/Buttun';
+import BogoHedertop from '../common/BogoHedertop';
+import Font from '../asstes/Font';
 
 
 const Bogoregistar = ({ navigation }) => {
@@ -24,14 +26,12 @@ const Bogoregistar = ({ navigation }) => {
             <StatusBar barStyle={'light-content'} translucent backgroundColor="transparent" />
 
             <LinearGradient colors={['#88C541', '#2352A4',]} style={styles.linearGradient}>
-                {/* <Hedertop
-                    image={Imagepath.back}
-                    tintclr="white"
-                    tchbltxt="Help"
-                    leftpress={() => navigation.goBack()}
-
-                    style={{ marginTop: 30, }}
-                /> */}
+            <View style={{}}>
+                    <BogoHedertop
+                        iconname='chevron-left'
+                        lefpress={() => navigation.goBack()}
+                        righttext='Help' />
+                </View>
 
 
 
@@ -41,14 +41,14 @@ const Bogoregistar = ({ navigation }) => {
 
                 </View>
 
-                <Text style={styles.registar}>Register here</Text>
+                <Text style={styles.registartxt}>Register here</Text>
 
 
                 <View style={styles.inputvew}>
 
                     <Text style={styles.entrtxt}>Enter your Mobile Number</Text>
 
-                    <Text style={styles.mobilnmr}>Mobile Number</Text>
+                    <Text style={styles.mobilnmrtxt}>Mobile Number</Text>
 
 
                     <View style={{ marginTop: scale(40) }}>
@@ -72,11 +72,9 @@ const Bogoregistar = ({ navigation }) => {
                         />
                     </View>
 
-                    <Text style={styles.text}>By creating an account, you agree to BOGO’s{'\n'} Terms and Condition and Privacy Policy</Text>
+                    <Text style={styles.bytext}>By creating an account, you agree to BOGO’s{'\n'} Terms and Condition and Privacy Policy</Text>
 
-                    {/* <TouchableOpacity style={styles.btn} onPress={()=>navigation.navigate('Bogoveryfycod')}>
-    <Text style={{fontSize:scale(16),fontWeight:'700',textAlign:'center',color:'#FFFFFF'}}>Submit</Text>
-</TouchableOpacity> */}
+             
 
                     <Buttun
                         title="Submit"
@@ -88,7 +86,7 @@ const Bogoregistar = ({ navigation }) => {
                             borderRadius: scale(6),
                             width: '95%',
                             justifyContent: 'center',
-                            marginTop: scale(18),
+                            marginTop: scale(25),
                             marginBottom: scale(30)
                         }}
                     />
@@ -118,13 +116,14 @@ const styles = ScaledSheet.create({
         resizeMode: 'contain',
         top: '15@s'
     },
-    registar: {
+    registartxt: {
         fontSize: '32@s',
         lineHeight: '39@s',
         fontWeight: '700',
         top: '35@s',
         color: '#FFFFFF',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily:Font.Bold
     },
     inputvew: {
         height: '260@s',
@@ -143,21 +142,23 @@ const styles = ScaledSheet.create({
         letterSpacing: '-0.3@s',
         textAlign: 'center',
         top: '10@s',
-
+        fontFamily:Font.Bold
     },
-    mobilnmr: {
+    mobilnmrtxt: {
         fontSize: '14@s',
         fontWeight: '600',
         lineHeight: '17.07@s',
         top: '36@s',
-        left: '13@s'
+        left: '13@s',
+        fontFamily:Font.Bold
     },
-    text: {
+    bytext: {
         fontSize: '14@s',
         fontWeight: '200',
         textAlign: 'center',
         top: '14@s',
-        color: '#8E8E8E'
+        color: '#8E8E8E',
+        fontFamily:Font.Meduam
     },
     // btn:{
     //  height:'42@s',

@@ -8,6 +8,8 @@ import Icon from 'react-native-vector-icons/dist/FontAwesome';
 import { TextInput, } from "react-native-gesture-handler";
 import PhoneInput from "react-native-phone-number-input";
 import Buttun from "../common/Buttun";
+import BogoHedertop from "../common/BogoHedertop";
+import Font from "../asstes/Font";
 
 
 const Account_setting = ({navigation}) => {
@@ -23,10 +25,12 @@ const Account_setting = ({navigation}) => {
     return (
         <ScrollView style={{ flex: 1 }}>
             <LinearGradient colors={['#88C541', '#2352A4',]} style={styles.linearGradient}>
-                <Hedertop
-                    image={Imagepath.bogologo}
-                    rightimg={Imagepath.ballicon}
-                />
+            <View style={{}}>
+                    <BogoHedertop
+                        iconname='chevron-left'
+                        lefpress={() => navigation.goBack()}
+                        righttext='Help' />
+                </View>
 
                 <View style={styles.settinfvew}>
                     <Image style={styles.imgstyle} source={Imagepath.settingicone} />
@@ -98,7 +102,7 @@ const Account_setting = ({navigation}) => {
                                 setFormattedValue(text);
                             }}
                             withDarkTheme
-                            withShadow
+                            // withShadow
                         
                         />
                     </View>
@@ -174,7 +178,7 @@ const styles = ScaledSheet.create({
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: '-20@s'
+        marginTop: '20@s'
     },
     imgstyle: {
         height: '30@s',
@@ -186,7 +190,8 @@ const styles = ScaledSheet.create({
     sttingtxt: {
         fontSize: '24@s',
         color: '#FFFFFF',
-        fontWeight: '700'
+        fontWeight: '700',
+        fontFamily:Font.Bold
     },
     whitevew: {
         width: '100%',
@@ -199,13 +204,14 @@ const styles = ScaledSheet.create({
         fontWeight: '600',
         color: '#000000',
         fontSize: '16@s',
-
+        fontFamily:Font.Bold
 
     },
     owenrtxt: {
         fontSize: '14@s',
         fontWeight: '400',
-        color: '#8E8E8E'
+        color: 'black',
+        fontFamily:Font.Bold
     },
     inputstyle: {
         width: '100%',
@@ -216,6 +222,7 @@ const styles = ScaledSheet.create({
         fontSize: '13@s',
         paddingLeft: '16@s',
         fontWeight: '400',
+        fontFamily:Font.Bold
     },
     chngtchle: {
         marginTop: '4@s',
@@ -226,36 +233,39 @@ const styles = ScaledSheet.create({
         color: '#029CAB',
         fontSize: '14@s',
         fontWeight: '400',
-
+        fontFamily:Font.Bold
     },
     mobilnmr: {
         fontSize: '14@s',
         fontWeight: '400',
         lineHeight: '17.07@s',
-
+        fontFamily:Font.Bold,
+        color: 'black',
 
     },
     paymenttxt: {
         fontSize: '16@s',
         color: '#000000',
         fontWeight: '600',
-        top: '16@s'
+        top: '16@s',
+        fontFamily:Font.Bold
     },
     vew: {
         width: '100%',
-
         marginTop: '40@s',
         backgroundColor: '#F9F9F9'
     },
     susucribetxt: {
         fontSize: '15@s',
         fontWeight: '400',
-        color: '#130F26'
+        color: '#130F26',
+        fontFamily:Font.Bold
     },
     goldtxt: {
         fontSize: '15@s',
         fontWeight: '400',
         color: '#029CAB',
+        fontFamily:Font.Bold
     },
     golmainvew: {
         flexDirection: 'row',
@@ -272,13 +282,15 @@ const styles = ScaledSheet.create({
         marginTop: '5@s',
         paddingLeft: '45@s',
         fontSize: '15@s',
-        fontWeight: '400'
+        fontWeight: '400',
+        fontFamily:Font.Bold
     },
     mangetxt: {
         fontSize: '15@s',
         fontWeight: '500',
         color: '#029CAB',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily:Font.Bold
     },
     btnvew:{
         width:'100%',

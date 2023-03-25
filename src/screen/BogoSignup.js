@@ -7,6 +7,7 @@ import Imagepath from '../asstes/Imagepath';
 
 import BogoHedertop from '../common/BogoHedertop';
 import Buttun from '../common/Buttun';
+import Font from '../asstes/Font';
 
 
 const BogoSignup = ({ navigation }) => {
@@ -92,9 +93,9 @@ const BogoSignup = ({ navigation }) => {
 
             />
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: scale(15) }}>
-              <Text style={{ fontSize: scale(13), fontWeight: '700', color: '#CCCCCC' }}>6-12 characters</Text>
+              <Text style={{ fontSize: scale(13), fontWeight: '700', color: '#CCCCCC',fontFamily:Font.Bold }}>6-12 characters</Text>
 
-              <Text style={{ textAlign: 'right', right: scale(18), color: '#19CA97', fontSize: scale(12), fontWeight: '500' }}>Strong</Text>
+              <Text style={{ textAlign: 'right', right: scale(18), color: '#19CA97', fontSize: scale(12), fontWeight: '500' ,fontFamily:Font.Bold}}>Strong</Text>
 
             </View>
             <TouchableOpacity style={styles.tuchebl} onPress={() => hidee()}>
@@ -112,7 +113,7 @@ const BogoSignup = ({ navigation }) => {
 
             />
             <View style={{ marginTop: scale(14) }}>
-              <Text style={{ textAlign: 'right', right: scale(17), color: '#19CA97', fontSize: scale(12), fontWeight: '500' }}>Matched!</Text>
+              <Text style={{ textAlign: 'right', right: scale(17), color: '#19CA97', fontSize: scale(12), fontWeight: '500' ,fontFamily:Font.Bold}}>Matched!</Text>
 
 
             </View>
@@ -123,7 +124,7 @@ const BogoSignup = ({ navigation }) => {
 
 
           <View style={styles.cuntryoikrvew}>
-            <Text style={{ color: '#8E8E8E', fontSize: scale(15), fontWeight: '400', marginLeft: scale(5) }}>Mobile number</Text>
+            <Text style={{    color: 'black',fontSize: scale(15), fontWeight: '400', marginLeft: scale(5) ,fontFamily:Font.Bold}}>Mobile number</Text>
 
 
             <PhoneInput
@@ -193,7 +194,8 @@ const styles = ScaledSheet.create({
     fontWeight: '700',
     color: '#FFFFFF',
     textAlign: 'center',
-    top: '-20@s'
+    top: '-20@s',
+    fontFamily:Font.Bold
   },
   whitevew: {
     height: '670@s',
@@ -215,8 +217,8 @@ const styles = ScaledSheet.create({
     fontSize: '13@s',
     fontWeight: '400',
     lineHeight: '15@s',
-    color: '#8E8E8E',
-    
+    color: 'black',
+    fontFamily:Font.Bold
 
   },
   inputvew: {
@@ -232,7 +234,8 @@ const styles = ScaledSheet.create({
     fontSize: '15@s',
     paddingLeft: '16@s',
     fontWeight: '400',
-    color: 'black'
+    color: 'black',
+    fontFamily:Font.Bold
   },
   inputvew2: {
     marginTop: '20@s',

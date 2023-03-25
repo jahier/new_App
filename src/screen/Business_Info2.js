@@ -8,6 +8,7 @@ import BogoHedertop from "../common/BogoHedertop";
 import Toptab from "../common/Toptab";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import MapView, { Marker } from 'react-native-maps';
+import Font from "../asstes/Font";
 
 
 
@@ -184,9 +185,10 @@ const styles = ScaledSheet.create({
         color: '#FFFFFF',
         fontSize: '27@s',
         textAlign: 'center',
-        fontWeight: '700',
+        fontWeight: "700",
         bottom: '10@s',
         bottom: '30@s',
+        fontFamily:Font.Bold
     },
     map: {
         resizeMode: 'contain',
@@ -201,15 +203,17 @@ const styles = ScaledSheet.create({
         borderRadius: '20@s',
         paddingHorizontal: '30@s',
         color: 'black',
-        alignSelf: 'center'
+        alignSelf: 'center',
+        fontFamily:Font.Bold
     },
     subtext: {
         textAlign: 'center',
         fontSize: '16@s',
-        fontWeight: '600',
+        fontWeight: "600",
         color: '#1478A8',
         marginTop: '20@s',
-        bottom: '10@s'
+        bottom: '10@s',
+        fontFamily:Font.Bold
     },
     mapStyle: {
         position: 'absolute',

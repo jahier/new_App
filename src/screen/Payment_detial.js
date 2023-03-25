@@ -8,6 +8,7 @@ import BogoHedertop from '../common/BogoHedertop';
 import Buttun from '../common/Buttun';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import moment from "moment";
+import Font from '../asstes/Font';
 
 
 const Payment_detial = ({ navigation }) => {
@@ -101,11 +102,11 @@ const Payment_detial = ({ navigation }) => {
 
                     <View style={{ flexDirection: 'row', marginTop: scale(13), alignItems: 'center' }}>
                         <View>
-                            <Text style={{ fontSize: scale(13), fontWeight: '400', color: '#8E8E8E' }}>Cardholder name</Text>
+                            <Text style={{ fontSize: scale(13), fontWeight: '400',color: 'black',fontFamily:Font.Bold }}>Cardholder name</Text>
 
 
                         </View>
-                        <Text style={{ left: scale(70), fontSize: scale(13), fontWeight: '400' }}>CVV</Text>
+                        <Text style={{ left: scale(70), fontSize: scale(13), fontWeight: '400',fontFamily:Font.Bold ,color: 'black',}}>CVV</Text>
 
 
                     </View>
@@ -114,7 +115,7 @@ const Payment_detial = ({ navigation }) => {
                     <View style={{ height: scale(30), width: '100%', flexDirection: 'row' }}>
                         <View style={{ width: '50%', }}>
                             <TouchableOpacity style={{ width: '96%', backgroundColor: "#F7F7F7", height: scale(48), marginTop: scale(10), borderRadius: scale(5),alignItems:'center',justifyContent:'center' }} title="Show Date Picker" onPress={showDatePicker} >
-                                <Text style={{ textAlign: 'center' }}>{isdate}</Text>
+                                <Text style={{ textAlign: 'center',color:'black' ,fontFamily:Font.Bold}}>{isdate}</Text>
                             </TouchableOpacity>
                             <DateTimePickerModal
                                 isVisible={isDatePickerVisible}
@@ -140,7 +141,7 @@ const Payment_detial = ({ navigation }) => {
 
 
                         <TouchableOpacity>
-                            <Text style={{ fontSize: scale(16), color: '#029CAB', fontWeight: '400', }}>AED 100</Text>
+                            <Text style={{ fontSize: scale(16), color: '#029CAB', fontWeight: '400',fontFamily:Font.Bold }}>AED 100</Text>
                         </TouchableOpacity>
 
                     </View>
@@ -182,7 +183,8 @@ const styles = ScaledSheet.create({
         fontWeight: '700',
         top: '10@s',
         color: '#FFFFFF',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily:Font.Bold
     },
     whitecontin: {
         width: '100%',
@@ -199,7 +201,7 @@ const styles = ScaledSheet.create({
         fontWeight: '600',
         color: '#029CAB',
         lineHeight: '19.5@s',
-
+        fontFamily:Font.Bold,
 
         textAlign: 'center'
     },
@@ -207,9 +209,10 @@ const styles = ScaledSheet.create({
         fontSize: '13@s',
         fontWeight: '400',
         lineHeight: '15@s',
-        color: '#8E8E8E',
+        color: 'black',
         top: '8@s',
-        left: '9@s'
+        left: '9@s',
+        fontFamily:Font.Bold
     },
     input: {
         height: "48@s",
@@ -220,23 +223,26 @@ const styles = ScaledSheet.create({
         fontSize: '13@s',
         paddingLeft: '15@s',
         backgroundColor: '#F7F7F7',
-        color: 'black'
+        color: 'black',
+        fontFamily:Font.Bold
     },
 
 
     cartxt: {
         fontSize: '13@s',
         fontWeight: '400',
-        color: '#8E8E8E',
+        color: 'black',
         top: '10@s',
-        left: '9@s'
+        left: '9@s',
+        fontFamily:Font.Bold
     },
 
     topay: {
         fontSize: '16@s',
         fontWeight: '400',
         lineHeight: '19@s',
-        color: '#8E8E8E'
+        color: 'black',
+        fontFamily:Font.Bold
     },
     visaimg: {
         height: '20@s',

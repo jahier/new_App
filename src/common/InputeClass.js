@@ -2,6 +2,7 @@ import React from "react";
 import { Text, View, TouchableOpacity, Image } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import { scale } from "react-native-size-matters";
+import Font from "../asstes/Font";
 
 const InputeClass = ({ lebel, placeholder, onChangeText, value, onSubmitEditing, ref, autoFocus ,returnKeyType,placeholderTextColor}) => {
     return (
@@ -20,8 +21,8 @@ const InputeClass = ({ lebel, placeholder, onChangeText, value, onSubmitEditing,
                 returnKeyType={returnKeyType}
             />
             <Text style={{
-                color: '#8E8E8E', fontSize: scale(13), fontWeight: '400', position: 'absolute', bottom: scale(53), left: scale(15)
-            }}>{lebel}</Text>
+                color: 'black', fontSize: scale(13), fontWeight: '400', position: 'absolute', bottom: scale(53), left: scale(15)
+                ,fontFamily:Font.Bold }}>{lebel}</Text>
         </View>
 
     )

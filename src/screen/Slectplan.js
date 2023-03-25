@@ -8,26 +8,46 @@ import Imagepath from '../asstes/Imagepath';
 import BogoHedertop from '../common/BogoHedertop';
 import Buttun from '../common/Buttun';
 import Hedertop from '../common/Hedertop';
-import SelectDropdown from 'react-native-select-dropdown'
+import { Dropdown } from 'react-native-element-dropdown';
 import Icon from 'react-native-vector-icons/Feather';
+import { ScrollView } from 'react-native-gesture-handler';
+import Font from '../asstes/Font';
 
 
 
 const Slectplan = ({ navigation }) => {
 
+    const [value, setValue] = useState(null);
+    const [isFocus, setIsFocus] = useState(false);
 
-    const city = [
-        'Day', 'Week', 'Monthly', 'Year', 
+    const renderLabel = () => {
+        if (value || isFocus) {
+            return (
+                <View>
+
+                </View>
+            );
+        }
+        return null;
+    };
+    const slect = [
+        { label: 'day', value: '1' },
+        { label: 'Month', value: '2' },
+        { label: 'Year', value: '3' },
+
     ]
-    const[show ,setshow]= useState('')
+    const [show, setshow] = useState('')
 
-    const showbtn=()=>{
+    const showbtn = () => {
         setshow(!show)
     }
-
+    const [slecte, setslecte] = useState()
+    const sltbtn = (id) => {
+        setslecte(id)
+    }
 
     return (
-        <View
+        <ScrollView
             style={{
                 flex: 1,
             }}>
@@ -62,7 +82,14 @@ const Slectplan = ({ navigation }) => {
 
                     <View style={styles.towvew}>
 
-                        <View style={styles.one}>
+                        <TouchableOpacity style={
+                            {  height: scale(177),
+                            width: '46%',
+                            borderWidth: scale(1),
+                            borderRadius:scale(6),
+                            borderColor:slecte == '1' ? '#029CAB' : 'gray'}
+                        } 
+                            onPress={() => sltbtn('1')}>
 
                             <View style={styles.silvr}>
                                 <Image style={styles.dimond} source={Imagepath.dimondlogo} />
@@ -71,11 +98,17 @@ const Slectplan = ({ navigation }) => {
                             <Text style={{ fontSize: scale(15), fontWeight: '700', textAlign: 'center', top: scale(14), color: '#000000' }}>Silver Tier</Text>
 
                             <Text style={styles.aedtxt}>100 AED per month, or{'\n'}1,000 AED per year</Text>
-                        </View>
+                        </TouchableOpacity>
 
 
 
-                        <View style={styles.one}>
+                        <TouchableOpacity style={
+                            {  height: scale(177),
+                            width: '46%',
+                            borderWidth: scale(1),
+                            borderRadius:scale(6),
+                            borderColor:slecte == '2' ? '#029CAB' : 'gray'}
+                        }onPress={() => sltbtn('2')}>
                             <View style={styles.gold}>
                                 <Image style={styles.dimond} source={Imagepath.dimondlogo} />
                             </View>
@@ -83,7 +116,7 @@ const Slectplan = ({ navigation }) => {
                             <Text style={{ fontSize: scale(15), fontWeight: '700', textAlign: 'center', top: scale(14), color: '#000000' }}>Gold Tier</Text>
 
                             <Text style={styles.aedtxt}>150 AED per month, or{'\n'}1,500 AED per year</Text>
-                        </View>
+                        </TouchableOpacity>
 
                     </View>
 
@@ -91,23 +124,37 @@ const Slectplan = ({ navigation }) => {
                     <Text style={styles.biilingtxt}>Billing Cycle</Text>
 
                     <View style={styles.slctpikrview}>
-                        <SelectDropdown 
-                        
-                    
-                        dropdownStyle={{width:'98%',color:'blue',borderRadius:10,marginTop:53,alignSelf:'center'}}
-                        animationType="slide"
-                            data={city}
-                            buttonStyle={styles.buttan}
-                            buttonTextStyle={{ color: '#3A3A3A', textAlign: 'left', }}
-                            onSelect={(selectedItem, index) => {
-                             
+                        {renderLabel()}
+                        <Dropdown
+                            style={[styles.dropdown, isFocus && { borderColor: '#9E9BA8' }]}
+                            placeholderStyle={styles.placeholderStyle}
+                            selectedTextStyle={styles.selectedTextStyle}
+                            inputSearchStyle={styles.inputSearchStyle}
+                            containerStyle={{ marginTop: -36, width: '94%', alignSelf: 'center', borderBottomEndRadius: 10, borderBottomStartRadius: 10 }}
+                            data={slect}
+                            // search
+
+                            maxHeight={300}
+                            labelField="label"
+                            valueField="value"
+                            placeholder={!isFocus ? 'Country' : '...'}
+                            // searchPlaceholder="Search..."
+                            value={value}
+                            onFocus={() => setIsFocus(true)}
+                            onBlur={() => setIsFocus(false)}
+                            onChange={item => {
+                                setValue(item.value);
+                                setIsFocus(false);
                             }}
+                        // renderLeftIcon={() => (
+                        //   <Image source={Imagepath.Imagepath.Window}/>
+                        // )}
                         />
-                         <TouchableOpacity style={{ paddingHorizontal: scale(15), position: 'absolute', right: scale(10), top: scale(30) }} onPress={()=>showbtn('')}>
-                    <Icon name={'chevron-down'} size={25} color="black" />
-                </TouchableOpacity>
+                        {/* <TouchableOpacity style={{ paddingHorizontal: scale(15), position: 'absolute', right: scale(10), top: scale(30) }} onPress={() => showbtn('')}>
+                            <Icon name={'chevron-down'} size={25} color="black" />
+                        </TouchableOpacity> */}
                     </View>
-                    <View style={styles.txtvew}>
+                    <View style={styles.nexttxtvew}>
 
                         <Text style={styles.nexttxt}>Next billing cycle</Text>
 
@@ -151,7 +198,7 @@ const Slectplan = ({ navigation }) => {
             </LinearGradient>
 
 
-        </View>
+        </ScrollView>
     );
 };
 
@@ -164,7 +211,7 @@ const styles = ScaledSheet.create({
     },
     logovew2: {
         alignItems: 'center',
-        marginTop: '-12@s'
+        marginTop: '20@s'
     },
     bogologo: {
         height: '71@s',
@@ -177,7 +224,8 @@ const styles = ScaledSheet.create({
         fontWeight: '700',
         top: '10@s',
         color: '#FFFFFF',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily: Font.Bold
     },
     whitecontin: {
         width: '100%',
@@ -196,6 +244,7 @@ const styles = ScaledSheet.create({
         color: '#029CAB',
         lineHeight: '19.5@s',
         top: "8@s",
+        fontFamily: Font.Bold
         // left: "5@s"
     },
     towvew: {
@@ -208,7 +257,6 @@ const styles = ScaledSheet.create({
     one: {
         height: '177@s',
         width: '46%',
-        borderColor: '#029CAB',
         borderWidth: '1@s',
         borderRadius: '6@s'
     },
@@ -232,7 +280,8 @@ const styles = ScaledSheet.create({
         top: '20@s',
         fontSize: '12@s',
         fontWeight: '500',
-        color: '#414141'
+        color: '#414141',
+        fontFamily: Font.Bold
     },
     gold: {
         width: '59@s',
@@ -248,9 +297,10 @@ const styles = ScaledSheet.create({
         fontSize: '13@s',
         fontWeight: '400',
         lineHeight: '15@s',
-        color: '#8E8E8E',
+        color: 'black',
         top: '22@s',
-        left: '9@s'
+        left: '9@s',
+        fontFamily: Font.Bold
     },
     input: {
         height: "48@s",
@@ -263,9 +313,10 @@ const styles = ScaledSheet.create({
         fontSize: '13@s',
         paddingLeft: '15@s',
         backgroundColor: '#F7F7F7',
-        color: 'black'
+        color: 'black',
+        fontFamily: Font.Meduam
     },
-    txtvew: {
+    nexttxtvew: {
         flexDirection: 'row',
         width: '96%',
         marginTop: '5@s',
@@ -276,7 +327,8 @@ const styles = ScaledSheet.create({
         fontSize: '12@s',
         fontWeight: '400',
         color: "#8E8E8E",
-        left: '2@s'
+        left: '2@s',
+        fontFamily: Font.Bold
 
 
     },
@@ -284,30 +336,33 @@ const styles = ScaledSheet.create({
         fontSize: '12@s',
         fontWeight: '400',
         color: "#8E8E8E",
-
+        fontFamily: Font.Bold
 
     },
     prmotxt: {
         fontSize: '13@s',
         fontWeight: '400',
-        color: '#8E8E8E',
+        color: "black",
         top: '6@s',
-        left: '9@s'
+        left: '9@s',
+        fontFamily: Font.Bold
     },
     redemtxt: {
         fontSize: '13@s',
         fontWeight: '700',
-        color: '#029CAB'
+        color: '#029CAB',
+        fontFamily: Font.Bold
     },
     topay: {
         fontSize: '16@s',
         fontWeight: '400',
         lineHeight: '19@s',
-        color: '#8E8E8E'
+        color: 'black',
+        fontFamily: Font.Bold
     },
     slctpikrview: {
-        width: '100%', marginTop: '10@s',
-        alignSelf:'center'
+        width: '100%', marginTop: '30@s',
+        alignSelf: 'center'
     },
     // dropdown: {
     //     width: '100%',
@@ -320,6 +375,33 @@ const styles = ScaledSheet.create({
         backgroundColor: '#F7F7F7',
         borderRadius: 8,
         marginTop: 20,
+
+    },
+    dropdown: {
+        height: 49,
+        borderColor: 'none',
+        borderRadius: 10,
+        paddingHorizontal: 8,
+        backgroundColor: '#F7F7F7',
+        elevation: 1
+    },
+    placeholderStyle: {
+        fontSize: 18,
+        paddingLeft: 17,
+        fontFamily: Font.Bold
+    },
+    selectedTextStyle: {
+        fontSize: 18,
+        paddingLeft: 17,
+        fontFamily: Font.Bold,
+        color: "black",
+    },
+
+    inputSearchStyle: {
+        height: 30,
+        fontSize: 19,
+        fontFamily: Font.Bold
+
 
     },
 

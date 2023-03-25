@@ -3,6 +3,7 @@ import { View, Text, StatusBar, Image, ImageBackground } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import LinearGradient from 'react-native-linear-gradient';
 import { scale, ScaledSheet } from "react-native-size-matters";
+import Font from "../asstes/Font";
 import Imagepath from "../asstes/Imagepath";
 import Hedertop from "../common/Hedertop";
 
@@ -38,7 +39,7 @@ const Redemption_history = () => {
 
             <Text style={styles.dubaitxt}>Dubai Marina </Text>
 
-            <TouchableOpacity style={styles.txttuchbl}>
+            <TouchableOpacity style={styles.downimgtuchbl}>
 
               <Image style={{ height: scale(13), width: scale(13), tintColor: "#029CAB", resizeMode: 'contain' }} source={Imagepath.down} />
             </TouchableOpacity>
@@ -138,7 +139,8 @@ const styles = ScaledSheet.create({
   redomtxt: {
     fontSize: '24@s',
     color: '#FFFFFF',
-    fontWeight: '700'
+    fontWeight: '700',
+    fontFamily:Font.Bold
   },
 
   wihtevew: {
@@ -151,9 +153,10 @@ const styles = ScaledSheet.create({
   dubaitxt: {
     fontSize: '14@s',
     fontWeight: '700',
-    color: "#029CAB"
+    color: "#029CAB",
+    fontFamily:Font.Bold
   },
-  txttuchbl: {
+  downimgtuchbl: {
     flexDirection: 'row'
   },
   dubytxtxew: {
@@ -184,13 +187,15 @@ const styles = ScaledSheet.create({
     color: '#029CAB',
     fontSize: '34@s',
     fontWeight: '700',
-    top: '20@s'
+    top: '20@s',
+    fontFamily:Font.Bold
   },
   totaltxt: {
     fontSize: '13@s',
     fontWeight: '400',
     color: '#979797',
-    top: '30@s'
+    top: '30@s',
+    fontFamily:Font.Bold
   },
   endview: {
     width: '100%',
@@ -202,16 +207,19 @@ const styles = ScaledSheet.create({
   johntxt: {
     color: '#3A3A3A',
     fontSize: '13@s',
-    fontWeight: '400'
+    fontWeight: '400',
+    fontFamily:Font.Bold
   },
   buytxt: {
     fontSize: '14@s',
     fontWeight: '400',
-    color: '#8E8E8E'
+    color: '#8E8E8E',
+    fontFamily:Font.Bold
   },
   secndtxt: {
     fontSize: '10@s',
     fontWeight: '400',
-    color: '#3A3A3A'
+    color: '#3A3A3A',
+    fontFamily:Font.Bold
   }
 })
