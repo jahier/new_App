@@ -31,75 +31,75 @@ const Welcomebogo = ({ navigation }) => {
 
         <View style={styles.mainstyle}>
             <StatusBar barStyle={'light-content'} translucent backgroundColor="transparent" />
-          
-                <LinearGradient colors={['#88C541', '#2352A4',]} style={styles.linearGradient}>
-                    <View style={styles.logovew}>
-                        <Image style={styles.bogologo} source={Imagepath.bogiwhitelogo} />
+
+            <LinearGradient colors={['#88C541', '#2352A4',]} style={styles.linearGradient}>
+                <View style={styles.logovew}>
+                    <Image style={styles.bogologo} source={Imagepath.bogiwhitelogo} />
 
 
-                    </View>
-                  
-                  <Text style={styles.welcmtxt}>Welcome Back!</Text>
+                </View>
 
-                    <View style={styles.whitevew}>
-                        <Text style={styles.logintxt}>Login</Text>
-                        <View>
+                <Text style={styles.welcmtxt}>Welcome Back!</Text>
 
-                            <TextInput style={styles.input}
-                                placeholder="Email address"
-                                placeholderTextColor="#8E8E8E"
+                <View style={styles.whitevew}>
+                    <Text style={styles.logintxt}>Login</Text>
+                    <View>
 
-                            />
+                        <TextInput style={styles.input}
+                            placeholder="Email address"
+                            placeholderTextColor="#8E8E8E"
 
-                        </View>
-
-                        <View>
-                            <TextInput style={styles.input2}
-                                placeholder="Password"
-                                placeholderTextColor="#8E8E8E"
-                                secureTextEntry={hide ? false : true}
-
-                            />
-                            <TouchableOpacity style={styles.eyetuchebl} onPress={() => hidee()}>
-                                <Image style={styles.eyeimg} source={hide ? Imagepath.eye : Imagepath.hide} />
-                            </TouchableOpacity>
-
-                        </View>
-                        <TouchableOpacity onPress={()=>navigation.navigate('Forget_Password')}>
-                            <Text style={styles.fogettxt}>Forget Password</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity style={styles.loginbtn} onPress={() => navigation.navigate('BogoSignup')}>
-                            <Text style={styles.loginbtntxt}>Login</Text>
-                        </TouchableOpacity>
-
-                        <Text style={styles.ortxt}>OR</Text>
-
-                        <View style={{ flexDirection: 'row', width: '100%', justifyContent: 'space-between', padding: 20, marginTop: scale(5) }}>
-
-                            <TouchableOpacity style={{ width: '49%', backgroundColor: '#E9E8E8', height: scale(52), alignItems: 'center', justifyContent: 'center', borderRadius: scale(5) }}>
-                                <Image style={styles.googlelgo} source={Imagepath.googlelogo} />
-                            </TouchableOpacity>
-
-                            <TouchableOpacity style={{ width: '49%', backgroundColor: '#E9E8E8', height: scale(52), alignItems: 'center', justifyContent: 'center', borderRadius: scale(5) }}>
-                                <Icon name="facebook" size={25} color="blue" />
-                            </TouchableOpacity>
-
-                        </View>
-
-                        <View style={{ flexDirection: 'row', alignSelf: 'center', marginBottom: scale(35) }}>
-                            <Text style={{ fontSize: scale(14), color: '#1478A8', fontFamily: Font.Regular }}>Don't have an account? </Text>
-                            <TouchableOpacity  onPress={() => navigation.navigate('BogoSignup')}>
-
-                                <Text style={{ fontSize: scale(14), color: '#1478A8', fontWeight: '700', textDecorationLine: 'underline', fontFamily: Font.Bold }}>Register</Text>
-                            </TouchableOpacity>
-
-                        </View>
+                        />
 
                     </View>
 
-                </LinearGradient>
-           
+                    <View>
+                        <TextInput style={styles.input2}
+                            placeholder="Password"
+                            placeholderTextColor="#8E8E8E"
+                            secureTextEntry={hide ? false : true}
+
+                        />
+                        <TouchableOpacity style={styles.eyetuchebl} onPress={() => hidee()}>
+                            <Image style={styles.eyeimg} source={hide ? Imagepath.eye : Imagepath.hide} />
+                        </TouchableOpacity>
+
+                    </View>
+                    <TouchableOpacity onPress={() => navigation.navigate('Forget_Password')}>
+                        <Text style={styles.fogettxt}>Forget Password</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.loginbtn} onPress={() => navigation.navigate('Business_Info')}>
+                        <Text style={styles.loginbtntxt}>Login</Text>
+                    </TouchableOpacity>
+
+                    <Text style={styles.ortxt}>OR</Text>
+
+                    <View style={{ flexDirection: 'row', width: '100%', justifyContent: 'space-between', padding: 20, marginTop: scale(5) }}>
+
+                        <TouchableOpacity style={{ width: '49%', backgroundColor: '#E9E8E8', height: scale(52), alignItems: 'center', justifyContent: 'center', borderRadius: scale(5) }}>
+                            <Image style={styles.googlelgo} source={Imagepath.googlelogo} />
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={{ width: '49%', backgroundColor: '#E9E8E8', height: scale(52), alignItems: 'center', justifyContent: 'center', borderRadius: scale(5) }}>
+                            <Icon name="facebook" size={25} color="blue" />
+                        </TouchableOpacity>
+
+                    </View>
+
+                    <View style={{ flexDirection: 'row', alignSelf: 'center', marginBottom: scale(35) }}>
+                        <Text style={{ fontSize: scale(14), color: '#1478A8', fontFamily: Font.Regular }}>Don't have an account? </Text>
+                        <TouchableOpacity onPress={() => navigation.navigate('BogoSignup')}>
+
+                            <Text style={{ fontSize: scale(14), color: '#1478A8', fontWeight: '700', textDecorationLine: 'underline', fontFamily: Font.Bold }}>Register</Text>
+                        </TouchableOpacity>
+
+                    </View>
+
+                </View>
+
+            </LinearGradient>
+
         </View>
 
     );
@@ -160,7 +160,7 @@ const styles = ScaledSheet.create({
         paddingLeft: '18@s',
         fontSize: '14@s',
         fontFamily: Font.Meduam,
-        color:'black'
+        color: 'black'
 
 
     },
@@ -174,7 +174,7 @@ const styles = ScaledSheet.create({
         paddingLeft: '18@s',
         fontSize: '14@s',
         fontFamily: Font.Meduam,
-        color:'black'
+        color: 'black'
 
 
     },

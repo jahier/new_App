@@ -9,9 +9,45 @@ import Buttun from '../common/Buttun';
 import { ScrollView } from 'react-native-gesture-handler';
 import BogoHedertop from '../common/BogoHedertop';
 import Font from '../asstes/Font';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
-const Bogoveryfycod = ({ navigation }) => {
+const Bogoveryfycod = (props) => {
+
+    const [otp, setotp] = useState()
+    const [singdata, setsingData] = useState()
+    console.log('props', singdata);
+
+    const SingUp = async () => {
+
+        try {
+            // console.log('asdassdftyf');
+            const response = await fetch('http://192.168.0.12:3020/merchant/otp_verify', {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: 'zk3457744@gmail.com',
+                    otp: otp,
+                })
+            })
+            // console.log('=>>>>>>===response', JSON.stringify(response));
+            const json = await response.json()
+            console.log('=>>>>>>===json', JSON.stringify(json));
+            if (json.is_registered == 1) {
+                // AsyncStorage.setItem('UserToken', json)
+                alert('user Account Sucsesfullyyyy')
+                props.navigation.navigate('Merchant_Register', { token: json.token })
+            }
+            else {
+                alert('user Account Unsucsesesfulluyyyyy')
+            }
+        } catch (error) {
+            console.log(error.toString() + ' bhawani');
+        }
+    }
 
     return (
         <View
@@ -50,6 +86,10 @@ const Bogoveryfycod = ({ navigation }) => {
                             textInputStyle={{ borderWidth: 1, borderColor: '#029CAB', borderRadius: 10, borderBottomWidth: 1, backgroundColor: '#F7F7F7' }}
                             inputCount={4}
                             autoFocus={false}
+                            handleTextChange={(text) => { setotp(text) }}
+                            defaulValue={otp}
+
+
                         />
 
                     </View>
@@ -68,7 +108,7 @@ const Bogoveryfycod = ({ navigation }) => {
                     </TouchableOpacity> */}
 
                     <Buttun
-                        onPress={() => navigation.navigate('Merchant_Register')}
+                        onPress={() => props.navigation.navigate('Merchant_Register', )}
 
                         style={{
                             backgroundColor: '#029CAB',
@@ -91,7 +131,7 @@ export default Bogoveryfycod;
 const styles = ScaledSheet.create({
     linearGradient: {
         flex: 1,
-        marginBottom: '20@s'
+        // marginBottom: '20@s'
     },
     logovew2: {
         alignItems: 'center',
@@ -109,7 +149,7 @@ const styles = ScaledSheet.create({
         top: '30@s',
         color: '#FFFFFF',
         textAlign: 'center',
-        fontFamily:Font.Bold
+        fontFamily: Font.Bold
     },
     inputvew: {
         // height: '260@s',
@@ -130,7 +170,7 @@ const styles = ScaledSheet.create({
         letterSpacing: '-0.3@s',
         textAlign: 'center',
         top: '5@s',
-        fontFamily:Font.Bold
+        fontFamily: Font.Bold
 
 
 
@@ -142,7 +182,7 @@ const styles = ScaledSheet.create({
         textAlign: 'center',
         top: '14@s',
         color: '#8E8E8E',
-        fontFamily:Font.Meduam
+        fontFamily: Font.Meduam
     },
     btn: {
         height: '42@s',
@@ -158,6 +198,6 @@ const styles = ScaledSheet.create({
     resndvew: {
 
         alignItems: 'center',
-        fontFamily:Font.Bold
+        fontFamily: Font.Bold
     }
 })

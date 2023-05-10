@@ -1,9 +1,8 @@
 import React from "react";
 import { Text, View, TouchableOpacity,Image } from "react-native";
 import { scale, ScaledSheet } from 'react-native-size-matters';
-import Font from "../asstes/Font";
 
-const Buttun = ({ title, onPress, style, type ,textTransform}) => {
+const Buttun = ({ title, onPress, style, type ,color}) => {
     return (
         <View>
 
@@ -14,7 +13,7 @@ const Buttun = ({ title, onPress, style, type ,textTransform}) => {
                         width: '100%', backgroundColor: 'orange', padding: scale(10),
                         borderRadius: scale(5), alignSelf: 'center',
                     }, style]}>
-                    <Text style={{ fontSize: scale(16), color: 'white', fontWeight: 'bold', textAlign: 'center', textTransform:textTransform ,fontFamily:Font.Bold }}>{title}</Text>
+                    <Text style={{ fontSize: scale(16), color: color, fontWeight: 'bold', textAlign: 'center', }}>{title}</Text>
                 </TouchableOpacity>
             }
             {/* {type = "2" &&

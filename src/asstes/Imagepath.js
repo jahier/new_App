@@ -7,10 +7,6 @@ const Imagepath = {
     fullclorlogo: require('../asstes/image/Bogo-FullColor.jpg'),
     dimondlogo: require('../asstes/image/dimondlogo.png'),
     visacrad: require('../asstes/image/visacard.png'),
-
-
-
-
     splase_img: require('../asstes/image/bogo-logo-animation.gif'),
     bogologo: require('../asstes/image/Bogo-White.png'),
     swiper1: require('../asstes/image/swiper1.png'),
@@ -25,6 +21,7 @@ const Imagepath = {
     Vector3: require('../asstes/image/Vector3.png'),
     hotelvectore: require('../asstes/image/hotel.png'),
     forkvectore: require('../asstes/image/foek.png'),
+
     map: require('../asstes/image/map.png'),
     search: require('../asstes/image/search.png'),
     map2: require('../asstes/image/map2.png'),
@@ -48,6 +45,25 @@ const Imagepath = {
     down: require('../asstes/image/Stroke1.png'),
     maskgrup: require('../asstes/image/MaskGroup1.png'),
     gleryicione: require('../asstes/image/Image.png'),
+
+    // my Work
+    notification: require('../asstes/image/notification.png'),
+    bogologo: require('../asstes/image/bogologo.png'),
+    settinglogo: require('../asstes/image/settinglogo.png'),
+    pencil: require('../asstes/image/pencil.png'),
+    Diemend: require('../asstes/image/Diemend.png'),
+    cardImg: require('../asstes/image/cardImg.png'),
+    lefArow: require('../asstes/image/leftaroow.png'),
+    BaseBacImg: require('../asstes/image/BaseBacImg.png'),
+    oneplus: require('../asstes/image/1++.png'),
+    rightClick: require('../asstes/image/rightClick.png'),
+    About: require('../asstes/image/About.png'),
+    SmallDimiond: require('../asstes/image/SmallDimiond.png'),
+    Gold_Feature_text: require('../asstes/image/Gold_Feature_text.png'),
+    videoicone: require('../asstes/image/videoicone.png'),
+    lineicone: require('../asstes/image/Line.png'),
+    codingbackground: require('../asstes/image/codingbackground.png'),
+    ConteantWriter: require('../asstes/image/ConteantWriter.png')
 
 
 
