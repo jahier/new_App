@@ -11,9 +11,7 @@ import BogoHedertop from '../common/BogoHedertop';
 import Font from '../asstes/Font';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-
 const Bogoveryfycod = (props) => {
-
     const [otp, setotp] = useState()
     const [singdata, setsingData] = useState()
     console.log('props', singdata);
